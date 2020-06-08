@@ -1,0 +1,267 @@
+{
+  "Uuid": "c6332745-181b-4d60-aec0-3991957edbb8",
+  "IsCustomNode": false,
+  "Description": null,
+  "Name": "Split_surfaces",
+  "ElementResolver": {
+    "ResolutionMap": {}
+  },
+  "Inputs": [],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "Dynamo.Nodes.DSModelElementsSelection, DSRevitNodesUI",
+      "NodeType": "ExtensionNode",
+      "InstanceId": [
+        "ef57b02a-5e81-49e7-93bb-ae5f002d921c-00030826",
+        "ef57b02a-5e81-49e7-93bb-ae5f002d921c-0003085d",
+        "88b03b05-80d3-484f-8022-471f61604c8d-00039575",
+        "a6aa132d-ccd7-408f-b2f9-ed67350c8c3a-0003b64a",
+        "72678df9-14a3-4aee-a80e-94a8e55a0926-0006611f",
+        "59371552-5800-43eb-9ba3-609565158fc5-00067163",
+        "59371552-5800-43eb-9ba3-609565158fc5-000674bb",
+        "59371552-5800-43eb-9ba3-609565158fc5-00067bda",
+        "7fcc8dca-3132-4323-9d41-faf5184b4f26-00067f11",
+        "c85e5be0-d8d5-4148-836f-b55e711ef373-00068454",
+        "c85e5be0-d8d5-4148-836f-b55e711ef373-00068a2c",
+        "c85e5be0-d8d5-4148-836f-b55e711ef373-00068ac9",
+        "c85e5be0-d8d5-4148-836f-b55e711ef373-00068afd",
+        "2fc77d67-1af0-4a43-aa66-c544d411df04-00068f8c",
+        "2fc77d67-1af0-4a43-aa66-c544d411df04-00068ff0",
+        "2fc77d67-1af0-4a43-aa66-c544d411df04-000690ee",
+        "2fc77d67-1af0-4a43-aa66-c544d411df04-00069119",
+        "2fc77d67-1af0-4a43-aa66-c544d411df04-0006914c",
+        "2fc77d67-1af0-4a43-aa66-c544d411df04-0006930b",
+        "17836a3c-e764-47fa-a2e0-08216444f621-0007882c",
+        "17836a3c-e764-47fa-a2e0-08216444f621-00078881",
+        "17836a3c-e764-47fa-a2e0-08216444f621-000788de",
+        "17836a3c-e764-47fa-a2e0-08216444f621-00078937",
+        "6dd03812-90e2-4279-9751-5fbc3584962d-00079784",
+        "96834e54-f091-4317-9b1a-bbe8b647201d-0007ba12",
+        "96834e54-f091-4317-9b1a-bbe8b647201d-0007bbad",
+        "c95e858d-9206-4eac-9a88-fccee0e2b73b-00081702",
+        "fe746f97-9f89-4685-8fa8-a4525719f180-00092721",
+        "fe746f97-9f89-4685-8fa8-a4525719f180-0009278f",
+        "5b7ac240-e9a7-43b2-b6bf-246956549a40-00099178",
+        "5b7ac240-e9a7-43b2-b6bf-246956549a40-00099411",
+        "5b7ac240-e9a7-43b2-b6bf-246956549a40-0009972b",
+        "87beca50-3847-4f14-8281-4eb8890e91b0-000a00ad",
+        "555aa063-b8a7-4b4f-ae07-ad835f8857bb-000abf13",
+        "e2eeab38-f437-4dce-846b-cb64191c9fcc-000acc8a",
+        "e2eeab38-f437-4dce-846b-cb64191c9fcc-000acdf8",
+        "e2eeab38-f437-4dce-846b-cb64191c9fcc-000ad27d",
+        "1551350c-45e5-41b8-bdf1-bcfa6794dc6a-000b0dce",
+        "a03add59-4d19-48e3-b25b-2f947f402211-000b620d",
+        "a03add59-4d19-48e3-b25b-2f947f402211-000b62fb",
+        "a03add59-4d19-48e3-b25b-2f947f402211-000b645d",
+        "a03add59-4d19-48e3-b25b-2f947f402211-000b648a",
+        "a03add59-4d19-48e3-b25b-2f947f402211-000b650e",
+        "c82e0dd9-31e8-407e-a294-c30431c2fda3-000bae53",
+        "c82e0dd9-31e8-407e-a294-c30431c2fda3-000baeb4",
+        "3195d1cb-ca2c-4181-b9c0-51da296667aa-000bb9ba",
+        "f565bef9-7d27-4781-b8d4-60f4a6034d87-000ce5d2",
+        "98e2f96c-ccbd-4abb-a697-e7e5136106ee-000cec5b",
+        "98e2f96c-ccbd-4abb-a697-e7e5136106ee-000cee4c",
+        "98e2f96c-ccbd-4abb-a697-e7e5136106ee-000cf488",
+        "b3a4a465-08e5-441a-bd3e-d967e546d52e-000dd685",
+        "bac06658-19d8-494b-b87a-559081499f8f-000e4fcf",
+        "bac06658-19d8-494b-b87a-559081499f8f-000e53de",
+        "bac06658-19d8-494b-b87a-559081499f8f-000e544c",
+        "ab343b7e-3705-4b87-bacc-33c06a6cee1d-000ee770",
+        "ab343b7e-3705-4b87-bacc-33c06a6cee1d-000ee8ed",
+        "ab343b7e-3705-4b87-bacc-33c06a6cee1d-000ee9e1"
+      ],
+      "Id": "aa57ab83ae564b528db2f8d712ba931a",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "ea2e5794d862406fa27a000ba89d488a",
+          "Name": "Elements",
+          "Description": "The selected elements.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Revit.Elements.Element.Geometry",
+      "Id": "49b7e4c4ddc847d7997402520fb1048b",
+      "Inputs": [
+        {
+          "Id": "4dc1b233a0164a9486644cd6cfe78ccb",
+          "Name": "element",
+          "Description": "Revit.Elements.Element",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "fcbc5ed0c084466b98b944a4601ebf97",
+          "Name": "var[]",
+          "Description": "var[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Get all of the Geometry associated with this object\n\nElement.Geometry ( ): var[]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Autodesk.DesignScript.Geometry.PolySurface.BySolid@Autodesk.DesignScript.Geometry.Solid",
+      "Id": "aba5ee7cd48e483dac979a6f2933cd5c",
+      "Inputs": [
+        {
+          "Id": "1afec9c5a6a84b258b1bf4d83d5917ff",
+          "Name": "solid",
+          "Description": "Solid which surfaces to use\n\nSolid",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "934d412b6bc84f5c90452f6c0ae3965e",
+          "Name": "PolySurface",
+          "Description": "PolySurface",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Make Polysurface by surfaces of Solid.\n\nPolySurface.BySolid (solid: Solid): PolySurface"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Autodesk.DesignScript.Geometry.PolySurface.Surfaces",
+      "Id": "8273d0ff52c94850bc78e440b73a4e47",
+      "Inputs": [
+        {
+          "Id": "e533a26ee5684662b3d8a16cf1d86408",
+          "Name": "polySurface",
+          "Description": "Autodesk.DesignScript.Geometry.PolySurface",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "89074e1c2eea463f9ac89284e31e4954",
+          "Name": "Surface[]",
+          "Description": "Surface[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Return new Surfaces representing the underlying Surfaces.\n\nPolySurface.Surfaces ( ): Surface[]"
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "ea2e5794d862406fa27a000ba89d488a",
+      "End": "4dc1b233a0164a9486644cd6cfe78ccb",
+      "Id": "56f192714a3f45eca3abb263f0e78099"
+    },
+    {
+      "Start": "fcbc5ed0c084466b98b944a4601ebf97",
+      "End": "1afec9c5a6a84b258b1bf4d83d5917ff",
+      "Id": "65aa753dd70f471ca3487e60898543ef"
+    },
+    {
+      "Start": "934d412b6bc84f5c90452f6c0ae3965e",
+      "End": "e533a26ee5684662b3d8a16cf1d86408",
+      "Id": "a2cdab8b907449278af86c3ea5591ec6"
+    }
+  ],
+  "Dependencies": [],
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": true,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.0.2.6826",
+      "RunType": "Manual",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "Background Preview",
+      "EyeX": -15400.449524451356,
+      "EyeY": 17828.298261898359,
+      "EyeZ": 24981.80023483677,
+      "LookX": 22230.357727576356,
+      "LookY": -13978.959394710859,
+      "LookZ": -26786.70648483677,
+      "UpX": 0.10540353552925188,
+      "UpY": 0.98628560153723144,
+      "UpZ": -0.12700711357351391
+    },
+    "NodeViews": [
+      {
+        "ShowGeometry": true,
+        "Name": "Select Model Elements",
+        "Id": "aa57ab83ae564b528db2f8d712ba931a",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 642.0,
+        "Y": 293.0
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Element.Geometry",
+        "Id": "49b7e4c4ddc847d7997402520fb1048b",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1173.0,
+        "Y": 302.0
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "PolySurface.BySolid",
+        "Id": "aba5ee7cd48e483dac979a6f2933cd5c",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1592.7724106454398,
+        "Y": 404.06937701848727
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "PolySurface.Surfaces",
+        "Id": "8273d0ff52c94850bc78e440b73a4e47",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1905.1001950246123,
+        "Y": 447.66653215863738
+      }
+    ],
+    "Annotations": [],
+    "X": -365.17742279382674,
+    "Y": -5.2413213573606754,
+    "Zoom": 0.88388348596516841
+  }
+}

@@ -1,0 +1,126 @@
+{
+  "Uuid": "eccd176e-d112-423e-bed8-c00c03aee083",
+  "IsCustomNode": false,
+  "Description": null,
+  "Name": "PointCloudOverride",
+  "ElementResolver": {
+    "ResolutionMap": {}
+  },
+  "Inputs": [],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "PythonNodeModels.PythonNode, PythonNodeModels",
+      "NodeType": "PythonScriptNode",
+      "Code": "import clr\r\n\r\n#import Revit Nodes\r\nclr.AddReference(\"RevitNodes\")\r\nimport Revit\r\nclr.ImportExtensions(Revit.Elements)\r\n\r\n#Import RevitAPI\r\nclr.AddReference(\"RevitAPI\")\r\nimport Autodesk\r\nfrom Autodesk.Revit.DB import *\r\nfrom Autodesk.Revit import DB\r\n\r\n#Import DocumentManager and TransactionManager\r\nclr.AddReference(\"RevitServices\")\r\nfrom RevitServices.Persistence import DocumentManager\r\nfrom RevitServices.Transactions import TransactionManager\r\n\r\n#get the project document\r\ndoc = DocumentManager.Instance.CurrentDBDocument\r\n\r\npointClouds= UnwrapElement(IN[0])\r\npointClouds = DB.FilteredElementCollector(doc).OfClass(DB.PointCloudInstance).WhereElementIsNotElementType().ToElements()\r\npt_cloud_settings = DB.PointClouds.PointCloudOverrideSettings()\r\n\r\n\r\nPCParam = pointClouds.GetOrderedParameters()\r\nPCParamUn = []\r\n\r\nPCScans = pointClouds.GetScans()\r\n\r\nPCOver = pointClouds.SupportsOverrides\r\n\r\n\r\nfor x in PCParam:\r\n\tPCParamUn.append(x.AsValueString())\r\n\t\r\n\r\n\r\n\r\n\t\r\n\t\r\nTransactionManager.Instance.EnsureInTransaction(doc)\r\n\r\n\r\n\r\nTransactionManager.Instance.TransactionTaskDone()\r\n\r\n\r\nOUT = pointClouds,PCParam, PCParamUn, PCScans, PCOver\r\n",
+      "VariableInputPorts": true,
+      "Id": "084f8b3f5f364f13a12e52da2034ecb6",
+      "Inputs": [
+        {
+          "Id": "d4cbbc5c01c84872b16694c9b85c81df",
+          "Name": "IN[0]",
+          "Description": "Input #0",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "0e80a0f4c312458394f935dabb0eaee2",
+          "Name": "OUT",
+          "Description": "Result of the python script",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Runs an embedded IronPython script."
+    },
+    {
+      "ConcreteType": "PythonNodeModels.PythonNode, PythonNodeModels",
+      "NodeType": "PythonScriptNode",
+      "Code": "\r\nimport clr\r\n\r\nclr.AddReference('RevitAPI')\r\nclr.AddReference('RevitAPIUI')\r\n\r\nfrom Autodesk.Revit import DB\r\n\r\nclr.AddReference(\"RevitServices\")\r\nimport RevitServices\r\nfrom RevitServices.Persistence import DocumentManager\r\nfrom RevitServices.Transactions import TransactionManager\r\n\r\nuiapp = DocumentManager.Instance.CurrentUIApplication\r\nuidoc = uiapp.ActiveUIDocument\r\ndoc = DocumentManager.Instance.CurrentDBDocument\r\n\r\n#Choose colour\r\ncol1= DB.Color(0, 0, 255)\r\ncol2= DB.Color(255, 0, 0)\r\n\r\npts = DB.FilteredElementCollector(doc).OfClass(DB.PointCloudInstance).WhereElementIsNotElementType().ToElements()\r\npt_cloud_settings = DB.PointClouds.PointCloudOverrideSettings()\r\n\r\n#overrides MODE - Choose between NoOverride,FixedColor, Elevation, Intensity,  Normals\r\npt_cloud_settings.ColorMode = DB.PointCloudColorMode.Intensity\r\n\r\n\r\npt_cloud_cset = DB.PointClouds.PointCloudColorSettings(col1, col2)\r\n\r\n\r\n#pt_cloud_cset.PointCloudColorSettings(col1, col2)\r\n\r\n\r\n\r\npt_cloud_mode_over=pt_cloud_settings.SetModeOverride(pt_cloud_settings.ColorMode, pt_cloud_cset)\r\n\r\n#https://www.revitapidocs.com/2019/d44adc12-6607-719a-98fd-fd8efbc85771.htm\r\n\r\n\r\nfor pt in pts:\r\n    view = uidoc.ActiveView\r\n    pt_overrides = view.GetPointCloudOverrides()\r\n    \r\nTransactionManager.Instance.EnsureInTransaction(doc)\r\n    \r\n    \r\n    \r\n\r\n    \r\npt_overrides.SetPointCloudScanOverrideSettings(pt.Id, pt_cloud_settings)\r\n    \r\nTransactionManager.Instance.TransactionTaskDone()",
+      "VariableInputPorts": true,
+      "Id": "7873f09b77fc493f8c803f79240e1a88",
+      "Inputs": [
+        {
+          "Id": "e0c0a56eea9a43cd880825ead2d71019",
+          "Name": "IN[0]",
+          "Description": "Input #0",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "86992b82ca494ad18d32f1cd9739aa60",
+          "Name": "OUT",
+          "Description": "Result of the python script",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Runs an embedded IronPython script."
+    }
+  ],
+  "Connectors": [],
+  "Dependencies": [],
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": true,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.0.2.6826",
+      "RunType": "Manual",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "Background Preview",
+      "EyeX": -17.0,
+      "EyeY": 24.0,
+      "EyeZ": 50.0,
+      "LookX": 12.0,
+      "LookY": -13.0,
+      "LookZ": -58.0,
+      "UpX": 0.0,
+      "UpY": 1.0,
+      "UpZ": 0.0
+    },
+    "NodeViews": [
+      {
+        "ShowGeometry": true,
+        "Name": "Python Script",
+        "Id": "084f8b3f5f364f13a12e52da2034ecb6",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": true,
+        "X": 706.97356693701454,
+        "Y": 185.79133863494184
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Python Script",
+        "Id": "7873f09b77fc493f8c803f79240e1a88",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 250.63098323289864,
+        "Y": 764.13186860762346
+      }
+    ],
+    "Annotations": [],
+    "X": 423.58183953082653,
+    "Y": 113.91518232782022,
+    "Zoom": 0.72617665429117428
+  }
+}

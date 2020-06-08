@@ -1,0 +1,970 @@
+{
+  "Uuid": "5fcabf6f-626b-4d6e-a347-0f48daaf4fdc",
+  "IsCustomNode": false,
+  "Description": null,
+  "Name": "RenameWinDoor",
+  "ElementResolver": {
+    "ResolutionMap": {}
+  },
+  "Inputs": [],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "DSRevitNodesUI.Categories, DSRevitNodesUI",
+      "SelectedIndex": 159,
+      "NodeType": "ExtensionNode",
+      "Id": "dfbdff2788f347fca29c2b16ba6c139d",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "1347145d8bbc458280266ee3c9327b28",
+          "Name": "Category",
+          "Description": "The selected Category.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "All built-in categories."
+    },
+    {
+      "ConcreteType": "PythonNodeModels.PythonNode, PythonNodeModels",
+      "NodeType": "PythonScriptNode",
+      "Code": "import clr\r\n\r\n#import Revit Nodes\r\nclr.AddReference(\"RevitNodes\")\r\nimport Revit\r\nclr.ImportExtensions(Revit.Elements)\r\n\r\n#Import RevitAPI\r\nclr.AddReference(\"RevitAPI\")\r\nimport Autodesk\r\nfrom Autodesk.Revit.DB import *\r\n\r\n#Import DocumentManager and TransactionManager\r\nclr.AddReference(\"RevitServices\")\r\nfrom RevitServices.Persistence import DocumentManager\r\nfrom RevitServices.Transactions import TransactionManager\r\n\r\ndoorCat = UnwrapElement(IN[0])\r\n\r\nnaming = []\r\nprojDoors = []\r\nnotWHDoors = []\r\nrenamedList = []\r\n\r\n\r\n#get the project document\r\ndoc = DocumentManager.Instance.CurrentDBDocument\r\n\r\n#filter the doors \r\ncollector = FilteredElementCollector(doc)\r\ndoors = collector.OfCategory(BuiltInCategory.OST_Doors).WhereElementIsElementType()\r\n\r\n#Get all Parameters \r\n\r\nfeetToMm = 304.8\r\n\r\nfor door in doors:\r\n\twidthParam = door.get_Parameter(BuiltInParameter.DOOR_WIDTH)\r\n\theightParam = door.get_Parameter(BuiltInParameter.DOOR_HEIGHT)\r\n\r\n\tnewName = (str(int(widthParam.AsDouble()*feetToMm)) + \"W\" + \" x \" + str(int(heightParam.AsDouble()*feetToMm)) + \"H\")\r\n\tnaming.append(newName)\r\n\r\n\t\r\n\t\r\nfor door in doors:\r\n\tprojDoors.append(door)\r\n\t\r\ncount = 0\t\r\nfor name in naming:\r\n\tif name == \"0W x 0H\":\r\n\t\tnotWHDoors.append(projDoors[count])\r\n\t\t#naming.remove(\"0W x 0H\")\r\n\t\tcount += 1\r\n\t\t\r\n\telse:\r\n\t\tcount += 1\r\n\t\t\r\n\r\nfor x in notWHDoors:\r\n\tdel naming[projDoors.index(x)]\r\n\tprojDoors.remove(x)\r\n\t\r\n\t\r\nTransactionManager.Instance.EnsureInTransaction(doc)\r\n\r\ncount = 0\r\nfor door in projDoors:\r\n\tdoor.Name = naming[count]\r\n\trenamedList.append(door.ToDSType(True))\r\n\tcount += 1\r\n\r\n\r\n\r\nTransactionManager.Instance.TransactionTaskDone()\r\n\r\n\r\nOUT = naming, notWHDoors, renamedList\r\n",
+      "VariableInputPorts": true,
+      "Id": "c762e587249645a48cf9fce91a0d0d11",
+      "Inputs": [
+        {
+          "Id": "f6462b7233be41d2bc901efcc5cd82a6",
+          "Name": "IN[0]",
+          "Description": "Input #0",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "560e7b111d9a43dea39f2a8d6820f9a2",
+          "Name": "OUT",
+          "Description": "Result of the python script",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Runs an embedded IronPython script."
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
+      "NodeType": "ExtensionNode",
+      "Id": "941d006b407143b09165c2fe0c556dff",
+      "Inputs": [
+        {
+          "Id": "d96bf306b41e4c9cb50ad526553d9c03",
+          "Name": "",
+          "Description": "Node to evaluate.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "e59692955c454f88a860f9b2946bd227",
+          "Name": "",
+          "Description": "Watch contents.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Visualize the output of node."
+    },
+    {
+      "ConcreteType": "DSRevitNodesUI.ElementsOfCategory, DSRevitNodesUI",
+      "NodeType": "ExtensionNode",
+      "Id": "078632703c3e42e7b4ae41e336cd81e2",
+      "Inputs": [
+        {
+          "Id": "9901ffe27ea84d83acd460949086d4a9",
+          "Name": "Category",
+          "Description": "The Category",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "af25703cb2974285a38940314aa53d39",
+          "Name": "Elements",
+          "Description": "An element type.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Get all elements of the specified category from the model."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "DSCore.List.GetItemAtIndex@var[]..[],int",
+      "Id": "e91c0e1c080b4ecab79be2c6c445d6e6",
+      "Inputs": [
+        {
+          "Id": "8ff4397029524954823295c1aa5478a8",
+          "Name": "list",
+          "Description": "List to fetch an item from.\n\nvar[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "b7d56883cd2d49c4884ab0726d1d6690",
+          "Name": "index",
+          "Description": "Index of the item to be fetched.\n\nint",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "31a49d15ca7d459e969b515f4ce969f4",
+          "Name": "item",
+          "Description": "Item in the list at the given index.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Returns an item from the given list that's located at the specified index.\n\nList.GetItemAtIndex (list: var[]..[], index: int): var[]..[]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "1;",
+      "Id": "68de9cb1089548938a590347a0fc5ceb",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "ac9e47cbe6d047d9a914f4802e2a0d2a",
+          "Name": "",
+          "Description": "Value of expression at line 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
+      "NodeType": "ExtensionNode",
+      "Id": "a9d82c8cb75247ff94483eceb969f36c",
+      "Inputs": [
+        {
+          "Id": "89cc6de3260b4a36a38218af2e597043",
+          "Name": "",
+          "Description": "Node to evaluate.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "622684ccf4cd4d87ae5e5cf70dece670",
+          "Name": "",
+          "Description": "Watch contents.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Visualize the output of node."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "DSCore.List.GetItemAtIndex@var[]..[],int",
+      "Id": "7db39130ed08406aa2e4eecc14ed261f",
+      "Inputs": [
+        {
+          "Id": "cbd6a7d42a6340199b75b13a62203dcd",
+          "Name": "list",
+          "Description": "List to fetch an item from.\n\nvar[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "347e2c9d20464d949a682e6c33225410",
+          "Name": "index",
+          "Description": "Index of the item to be fetched.\n\nint",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "4b9e3d850ec64f14aa5b18aadeed9b21",
+          "Name": "item",
+          "Description": "Item in the list at the given index.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Returns an item from the given list that's located at the specified index.\n\nList.GetItemAtIndex (list: var[]..[], index: int): var[]..[]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "2;",
+      "Id": "723b2564ab324709bba958d28b04b6f6",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "42ca48a999d249c1b340902caef74065",
+          "Name": "",
+          "Description": "Value of expression at line 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
+      "NodeType": "ExtensionNode",
+      "Id": "fd7a8e53ed554be7b7e9d35df4774796",
+      "Inputs": [
+        {
+          "Id": "6f4f7324cc534a6fbe6d8b18f78aae60",
+          "Name": "",
+          "Description": "Node to evaluate.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "fd9d66248b494f2b822427f0e858b88e",
+          "Name": "",
+          "Description": "Watch contents.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Visualize the output of node."
+    },
+    {
+      "ConcreteType": "DSRevitNodesUI.Categories, DSRevitNodesUI",
+      "SelectedIndex": 619,
+      "NodeType": "ExtensionNode",
+      "Id": "8302d9a8596d45cb96e74bec7c85701c",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "4274daee156d43d5be4f26e5cce234ff",
+          "Name": "Category",
+          "Description": "The selected Category.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "All built-in categories."
+    },
+    {
+      "ConcreteType": "PythonNodeModels.PythonNode, PythonNodeModels",
+      "NodeType": "PythonScriptNode",
+      "Code": "import clr\r\n\r\n#import Revit Nodes\r\nclr.AddReference(\"RevitNodes\")\r\nimport Revit\r\nclr.ImportExtensions(Revit.Elements)\r\n\r\n#Import RevitAPI\r\nclr.AddReference(\"RevitAPI\")\r\nimport Autodesk\r\nfrom Autodesk.Revit.DB import *\r\n\r\n#Import DocumentManager and TransactionManager\r\nclr.AddReference(\"RevitServices\")\r\nfrom RevitServices.Persistence import DocumentManager\r\nfrom RevitServices.Transactions import TransactionManager\r\n\r\ndoorCat = UnwrapElement(IN[0])\r\n\r\nnaming = []\r\nprojDoors = []\r\nnotWHDoors = []\r\nrenamedList = []\r\n\r\n\r\n#get the project document\r\ndoc = DocumentManager.Instance.CurrentDBDocument\r\n\r\n#filter the doors \r\ncollector = FilteredElementCollector(doc)\r\ndoors = collector.OfCategory(BuiltInCategory.OST_Windows).WhereElementIsElementType()\r\n\r\n#Get all Parameters \r\n\r\nfeetToMm = 304.8\r\n\r\nfor door in doors:\r\n\twidthParam = door.get_Parameter(BuiltInParameter.WINDOW_WIDTH)\r\n\theightParam = door.get_Parameter(BuiltInParameter.WINDOW_HEIGHT)\r\n\r\n\tnewName = (str(int(widthParam.AsDouble()*feetToMm)) + \"W\" + \" x \" + str(int(heightParam.AsDouble()*feetToMm)) + \"H\")\r\n\tnaming.append(newName)\r\n\r\n\t\r\n\t\r\nfor door in doors:\r\n\tprojDoors.append(door)\r\n\t\r\ncount = 0\t\r\nfor name in naming:\r\n\tif name == \"0W x 0H\":\r\n\t\tnotWHDoors.append(projDoors[count])\r\n\t\t#naming.remove(\"0W x 0H\")\r\n\t\tcount += 1\r\n\t\t\r\n\telse:\r\n\t\tcount += 1\r\n\t\t\r\n\r\nfor x in notWHDoors:\r\n\tdel naming[projDoors.index(x)]\r\n\tprojDoors.remove(x)\r\n\t\r\n\t\r\nTransactionManager.Instance.EnsureInTransaction(doc)\r\n\r\ncount = 0\r\nfor door in projDoors:\r\n\tdoor.Name = naming[count]\r\n\trenamedList.append(door.ToDSType(True))\r\n\tcount += 1\r\n\r\n\r\n\r\nTransactionManager.Instance.TransactionTaskDone()\r\n\r\n\r\nOUT = naming, notWHDoors, renamedList\r\n",
+      "VariableInputPorts": true,
+      "Id": "33c308277233434a90d5262404a8c2d9",
+      "Inputs": [
+        {
+          "Id": "470fdd0e44bf4adfb9401adeb9a70666",
+          "Name": "IN[0]",
+          "Description": "Input #0",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "8b157fe4f4894f1a92a7e8386d178150",
+          "Name": "OUT",
+          "Description": "Result of the python script",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Runs an embedded IronPython script."
+    },
+    {
+      "ConcreteType": "DSRevitNodesUI.ElementsOfCategory, DSRevitNodesUI",
+      "NodeType": "ExtensionNode",
+      "Id": "ab1979ba11de4256a0fc16b5cd97f053",
+      "Inputs": [
+        {
+          "Id": "a4c38975fccb43d884f621e77c02bbd1",
+          "Name": "Category",
+          "Description": "The Category",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "2d170516afae478cbb6a5dce1837e7c5",
+          "Name": "Elements",
+          "Description": "An element type.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Get all elements of the specified category from the model."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "2;",
+      "Id": "519be5331b3d4f669f53e472fbf2f896",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "86948148673744e08915052d4e5045c3",
+          "Name": "",
+          "Description": "Value of expression at line 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "1;",
+      "Id": "efea083b54c04eb19f17881703eea256",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "f6df27f96b5d49168e3e4bbc5e7c1590",
+          "Name": "",
+          "Description": "Value of expression at line 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "DSCore.List.GetItemAtIndex@var[]..[],int",
+      "Id": "8e684735d43243d387ae32de257b5d06",
+      "Inputs": [
+        {
+          "Id": "42a487c760644a58a709be2706f024d5",
+          "Name": "list",
+          "Description": "List to fetch an item from.\n\nvar[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "9db2a3df417d422f81870f0f226e3a41",
+          "Name": "index",
+          "Description": "Index of the item to be fetched.\n\nint",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "5c10049a8ec143d19de89c81e4419bf4",
+          "Name": "item",
+          "Description": "Item in the list at the given index.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Returns an item from the given list that's located at the specified index.\n\nList.GetItemAtIndex (list: var[]..[], index: int): var[]..[]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "DSCore.List.GetItemAtIndex@var[]..[],int",
+      "Id": "3bcf06254afb44c69543eda209a00ba5",
+      "Inputs": [
+        {
+          "Id": "82a34de1c4f846308a670f0b0619cf65",
+          "Name": "list",
+          "Description": "List to fetch an item from.\n\nvar[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "5445f24dafb34b52920898d4cc14234e",
+          "Name": "index",
+          "Description": "Index of the item to be fetched.\n\nint",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "9f2d19540a944ff69704629aa21ec3b8",
+          "Name": "item",
+          "Description": "Item in the list at the given index.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Returns an item from the given list that's located at the specified index.\n\nList.GetItemAtIndex (list: var[]..[], index: int): var[]..[]"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
+      "NodeType": "ExtensionNode",
+      "Id": "716499d8575b4a85b3b82b0c169fabed",
+      "Inputs": [
+        {
+          "Id": "b62f314f747a4c9fba97061b0378b0bc",
+          "Name": "",
+          "Description": "Node to evaluate.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "283f6cdad4134aaaa215e155d0c9e61c",
+          "Name": "",
+          "Description": "Watch contents.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Visualize the output of node."
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
+      "NodeType": "ExtensionNode",
+      "Id": "757b62a51b9d4d0197c020e74316c07e",
+      "Inputs": [
+        {
+          "Id": "ce9b717026e640a9a8e05a809ee30fbe",
+          "Name": "",
+          "Description": "Node to evaluate.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "dd4aad65d45546d795bb5b6b9ff7f10e",
+          "Name": "",
+          "Description": "Watch contents.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Visualize the output of node."
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
+      "NodeType": "ExtensionNode",
+      "Id": "61a0854bcd0a4dd8bc76919e5d76a653",
+      "Inputs": [
+        {
+          "Id": "024e1535e4ea4a26a60e7e57b67e3386",
+          "Name": "",
+          "Description": "Node to evaluate.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "f5a9f74694ed47d6819e979ab96a3766",
+          "Name": "",
+          "Description": "Watch contents.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Visualize the output of node."
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "1347145d8bbc458280266ee3c9327b28",
+      "End": "9901ffe27ea84d83acd460949086d4a9",
+      "Id": "05d1b86b1c4f4bc2abcd47b378108f8f"
+    },
+    {
+      "Start": "560e7b111d9a43dea39f2a8d6820f9a2",
+      "End": "d96bf306b41e4c9cb50ad526553d9c03",
+      "Id": "e69d64046d04466984f6408fc08033ff"
+    },
+    {
+      "Start": "e59692955c454f88a860f9b2946bd227",
+      "End": "8ff4397029524954823295c1aa5478a8",
+      "Id": "7880a8b23a93453d978e6c182f4db720"
+    },
+    {
+      "Start": "e59692955c454f88a860f9b2946bd227",
+      "End": "cbd6a7d42a6340199b75b13a62203dcd",
+      "Id": "b3a0e3dbf4b34fff97f98cbe9920c8e7"
+    },
+    {
+      "Start": "af25703cb2974285a38940314aa53d39",
+      "End": "f6462b7233be41d2bc901efcc5cd82a6",
+      "Id": "10702a74f19249848c3d44f9677b3ec9"
+    },
+    {
+      "Start": "31a49d15ca7d459e969b515f4ce969f4",
+      "End": "89cc6de3260b4a36a38218af2e597043",
+      "Id": "6e646e3560bd4b3ca86464a939d9f6d8"
+    },
+    {
+      "Start": "ac9e47cbe6d047d9a914f4802e2a0d2a",
+      "End": "b7d56883cd2d49c4884ab0726d1d6690",
+      "Id": "fb737397250a40fbaeec65ccd46e7ba0"
+    },
+    {
+      "Start": "4b9e3d850ec64f14aa5b18aadeed9b21",
+      "End": "6f4f7324cc534a6fbe6d8b18f78aae60",
+      "Id": "47e4f85b1c804b15a4c3da07b8963c72"
+    },
+    {
+      "Start": "42ca48a999d249c1b340902caef74065",
+      "End": "347e2c9d20464d949a682e6c33225410",
+      "Id": "4ef2103c13fc4312ac5ca0bf079bb9d4"
+    },
+    {
+      "Start": "4274daee156d43d5be4f26e5cce234ff",
+      "End": "a4c38975fccb43d884f621e77c02bbd1",
+      "Id": "ccdc2cc2f53c467fbb2a7d3e4a1a434c"
+    },
+    {
+      "Start": "8b157fe4f4894f1a92a7e8386d178150",
+      "End": "b62f314f747a4c9fba97061b0378b0bc",
+      "Id": "243ccac35e134dcaa7f0f5a33e96f0c3"
+    },
+    {
+      "Start": "2d170516afae478cbb6a5dce1837e7c5",
+      "End": "470fdd0e44bf4adfb9401adeb9a70666",
+      "Id": "f93208ec883a4e2bae0d8ea09c6f7103"
+    },
+    {
+      "Start": "86948148673744e08915052d4e5045c3",
+      "End": "5445f24dafb34b52920898d4cc14234e",
+      "Id": "f3dbd9b966ad411ca86b2f4b729a3eb3"
+    },
+    {
+      "Start": "f6df27f96b5d49168e3e4bbc5e7c1590",
+      "End": "9db2a3df417d422f81870f0f226e3a41",
+      "Id": "edf11eafe4104eb0908e1877f2d87049"
+    },
+    {
+      "Start": "5c10049a8ec143d19de89c81e4419bf4",
+      "End": "024e1535e4ea4a26a60e7e57b67e3386",
+      "Id": "38659dcd38984d6191c7ce9c9a577535"
+    },
+    {
+      "Start": "9f2d19540a944ff69704629aa21ec3b8",
+      "End": "ce9b717026e640a9a8e05a809ee30fbe",
+      "Id": "d78abc6fe9374720b94ee3864b0e8f67"
+    },
+    {
+      "Start": "283f6cdad4134aaaa215e155d0c9e61c",
+      "End": "42a487c760644a58a709be2706f024d5",
+      "Id": "f19bb7e17472467d94e18f7af71118ca"
+    },
+    {
+      "Start": "283f6cdad4134aaaa215e155d0c9e61c",
+      "End": "82a34de1c4f846308a670f0b0619cf65",
+      "Id": "e47a27f093aa4bfa9b06ed038d98ced2"
+    }
+  ],
+  "Dependencies": [],
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": true,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.0.2.6826",
+      "RunType": "Manual",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "Background Preview",
+      "EyeX": -17.0,
+      "EyeY": 24.0,
+      "EyeZ": 50.0,
+      "LookX": 12.0,
+      "LookY": -13.0,
+      "LookZ": -58.0,
+      "UpX": 0.0,
+      "UpY": 1.0,
+      "UpZ": 0.0
+    },
+    "NodeViews": [
+      {
+        "ShowGeometry": true,
+        "Name": "Categories",
+        "Id": "dfbdff2788f347fca29c2b16ba6c139d",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 501.4383856495084,
+        "Y": 1277.73937744537
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Python Script",
+        "Id": "c762e587249645a48cf9fce91a0d0d11",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1041.9817026052597,
+        "Y": 1317.6279618553378
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Watch",
+        "Id": "941d006b407143b09165c2fe0c556dff",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1227.55062059326,
+        "Y": 1220.0185528714758
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "All Elements of Category",
+        "Id": "078632703c3e42e7b4ae41e336cd81e2",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 803.294839440448,
+        "Y": 1340.7338710456631
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "List.GetItemAtIndex",
+        "Id": "e91c0e1c080b4ecab79be2c6c445d6e6",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1709.8511607275859,
+        "Y": 1320.994439151217
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Code Block",
+        "Id": "68de9cb1089548938a590347a0fc5ceb",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1568.3800519722822,
+        "Y": 1381.512635674319
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Watch",
+        "Id": "a9d82c8cb75247ff94483eceb969f36c",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 2133.7206195404005,
+        "Y": 1444.6630449145898
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "List.GetItemAtIndex",
+        "Id": "7db39130ed08406aa2e4eecc14ed261f",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1756.5798906355358,
+        "Y": 921.79757508044543
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Code Block",
+        "Id": "723b2564ab324709bba958d28b04b6f6",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1588.4066505042608,
+        "Y": 1014.358329254713
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Watch",
+        "Id": "fd7a8e53ed554be7b7e9d35df4774796",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 2127.1257322200709,
+        "Y": 858.47272262044316
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Categories",
+        "Id": "8302d9a8596d45cb96e74bec7c85701c",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 513.36578477346677,
+        "Y": 2227.1603477124572
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Python Script",
+        "Id": "33c308277233434a90d5262404a8c2d9",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1053.9091017292187,
+        "Y": 2267.0489321224268
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "All Elements of Category",
+        "Id": "ab1979ba11de4256a0fc16b5cd97f053",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 815.22223856440678,
+        "Y": 2290.1548413127471
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Code Block",
+        "Id": "519be5331b3d4f669f53e472fbf2f896",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1600.3340496282187,
+        "Y": 1963.7792995217969
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Code Block",
+        "Id": "efea083b54c04eb19f17881703eea256",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1580.3074510962388,
+        "Y": 2330.9336059414072
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "List.GetItemAtIndex",
+        "Id": "8e684735d43243d387ae32de257b5d06",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1721.7785598515488,
+        "Y": 2270.4154094183068
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "List.GetItemAtIndex",
+        "Id": "3bcf06254afb44c69543eda209a00ba5",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1768.5072897594989,
+        "Y": 1871.218545347532
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Watch",
+        "Id": "716499d8575b4a85b3b82b0c169fabed",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1239.4780197172188,
+        "Y": 2169.439523138567
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Watch",
+        "Id": "757b62a51b9d4d0197c020e74316c07e",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 2139.0531313440288,
+        "Y": 1807.89369288753
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Watch",
+        "Id": "61a0854bcd0a4dd8bc76919e5d76a653",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 2175.9069211271467,
+        "Y": 2387.7507565266746
+      }
+    ],
+    "Annotations": [
+      {
+        "Id": "37a0bdb1cefc4f0989866d883fdb51f8",
+        "Title": "Doors that dont have W and H parameters assigned",
+        "Nodes": [
+          "a9d82c8cb75247ff94483eceb969f36c"
+        ],
+        "Left": 2123.7206195404005,
+        "Top": 1261.6630449145898,
+        "Width": 310.0,
+        "Height": 359.0,
+        "FontSize": 36.0,
+        "InitialTop": 1444.6630449145898,
+        "InitialHeight": 206.0,
+        "TextblockHeight": 173.0,
+        "Background": "#FFFF7BAC"
+      },
+      {
+        "Id": "400432c8ae2243cfa31cff501cfec493",
+        "Title": "Sucessfuly named doors",
+        "Nodes": [
+          "fd7a8e53ed554be7b7e9d35df4774796"
+        ],
+        "Left": 2117.1257322200709,
+        "Top": 762.47272262044316,
+        "Width": 310.0,
+        "Height": 314.0,
+        "FontSize": 36.0,
+        "InitialTop": 858.47272262044316,
+        "InitialHeight": 248.0,
+        "TextblockHeight": 86.0,
+        "Background": "#FFFFC999"
+      },
+      {
+        "Id": "b973e882204c401abebac6df662950a6",
+        "Title": "Windows that dont have W and H parameters assigned",
+        "Nodes": [
+          "61a0854bcd0a4dd8bc76919e5d76a653"
+        ],
+        "Left": 2165.9069211271467,
+        "Top": 2204.7507565266746,
+        "Width": 310.0,
+        "Height": 338.0,
+        "FontSize": 36.0,
+        "InitialTop": 2387.7507565266746,
+        "InitialHeight": 124.0,
+        "TextblockHeight": 173.0,
+        "Background": "#FFFF7BAC"
+      },
+      {
+        "Id": "76eb3c1891ed45598c07ca0278c0cde8",
+        "Title": "Sucessfuly named Windows",
+        "Nodes": [
+          "757b62a51b9d4d0197c020e74316c07e"
+        ],
+        "Left": 2129.0531313440288,
+        "Top": 1711.89369288753,
+        "Width": 310.0,
+        "Height": 251.0,
+        "FontSize": 36.0,
+        "InitialTop": 1807.89369288753,
+        "InitialHeight": 124.0,
+        "TextblockHeight": 86.0,
+        "Background": "#FFFFC999"
+      }
+    ],
+    "X": 770.15325446533575,
+    "Y": 52.84370328275827,
+    "Zoom": 0.26367500647836695
+  }
+}

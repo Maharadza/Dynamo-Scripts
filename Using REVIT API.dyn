@@ -1,0 +1,121 @@
+{
+  "Uuid": "4761bf7e-5a40-4419-9d73-b2bce1b9ccd5",
+  "IsCustomNode": false,
+  "Description": null,
+  "Name": "Using REVIT API",
+  "ElementResolver": {
+    "ResolutionMap": {}
+  },
+  "Inputs": [],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "PythonNodeModels.PythonNode, PythonNodeModels",
+      "NodeType": "PythonScriptNode",
+      "Code": "# Enable Python support and load DesignScript library\r\nimport clr\r\nclr.AddReference('ProtoGeometry')\r\nfrom Autodesk.DesignScript.Geometry import *\r\n\r\n#import Revit API\r\nclr.AddReference('RevitAPI')\r\nfrom Autodesk.Revit.DB import *\r\n\r\n#import Manager Classes(this is for transactions)\r\n\r\nclr.AddReference('RevitServices')\r\nfrom RevitServices.Persistence import DocumentManager\r\nfrom RevitServices.Transactions import TransactionManager\r\n\r\nclr.AddReference('RevitNodes')\r\nimport Revit\r\nclr.ImportExtensions(Revit.Elements)\r\nclr.ImportExtensions(Revit.GeometryConversion)\r\n\r\n# The inputs to this node will be stored as a list in the IN variables.\r\nfamilytype = UnwrapElement(IN[0])\r\noutput =[]\r\n\r\n# Place your code below this line\r\ndoc = DocumentManager.Instance.CurrentDBDocument\r\n\r\nTransactionManager.Instance.EnsureInTransaction(doc)\r\n\r\nfor x in range(0, 5000, 500):\r\n\tx =UnitUtils.ConvertToInternalUnits(x, DisplayUnitType.DUT_MILLIMETERS)\r\n\tfam = doc.Create.NewFamilyInstance(XYZ(x, 0, 0), familytype, Structure.StructuralType.NonStructural)\r\n\twrappedfam = fam.ToDSType(True) #wraps element so it's visible in Dynamo\r\n\toutput.append(wrappedfam)\r\n\t\r\n#End transaction\r\n\r\nTransactionManager.Instance.TransactionTaskDone()\r\n\t\r\n\r\n# Assign your output to the OUT variable.\r\nOUT = output",
+      "VariableInputPorts": true,
+      "Id": "963da2bb8d6d40a88fbc5b0f26c9d5dc",
+      "Inputs": [
+        {
+          "Id": "7f8222f7bb3c4b36860f25b5544decc8",
+          "Name": "IN[0]",
+          "Description": "Input #0",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "9f714dd20f554c438748bb672ccd4dda",
+          "Name": "OUT",
+          "Description": "Result of the python script",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Runs an embedded IronPython script."
+    },
+    {
+      "ConcreteType": "DSRevitNodesUI.FamilyTypes, DSRevitNodesUI",
+      "SelectedIndex": 1,
+      "NodeType": "ExtensionNode",
+      "Id": "25e32053cfa748c9b10963a59db20a99",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "f1de374a79084139bc6fbe0d05632dbb",
+          "Name": "Family Type",
+          "Description": "The selected Family Type",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "All family types available in the document."
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "f1de374a79084139bc6fbe0d05632dbb",
+      "End": "7f8222f7bb3c4b36860f25b5544decc8",
+      "Id": "f3a96b50a89d46e499eb63e335a47c6f"
+    }
+  ],
+  "Dependencies": [],
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": true,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.0.2.6826",
+      "RunType": "Manual",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "Background Preview",
+      "EyeX": -23.046891218484969,
+      "EyeY": 26.067959098507014,
+      "EyeZ": 116.50875794264547,
+      "LookX": 23.046891218484969,
+      "LookY": -26.067959098507014,
+      "LookZ": -116.50875794264547,
+      "UpX": 0.0,
+      "UpY": 1.0,
+      "UpZ": 0.0
+    },
+    "NodeViews": [
+      {
+        "ShowGeometry": true,
+        "Name": "Python Script",
+        "Id": "963da2bb8d6d40a88fbc5b0f26c9d5dc",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 614.0,
+        "Y": 371.0
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Family Types",
+        "Id": "25e32053cfa748c9b10963a59db20a99",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 63.0,
+        "Y": 308.0
+      }
+    ],
+    "Annotations": [],
+    "X": 0.0,
+    "Y": 0.0,
+    "Zoom": 1.0
+  }
+}
