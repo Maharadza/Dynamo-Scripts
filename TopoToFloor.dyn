@@ -1,0 +1,268 @@
+{
+  "Uuid": "4761bf7e-5a40-4419-9d73-b2bce1b9ccd5",
+  "IsCustomNode": false,
+  "Description": null,
+  "Name": "TopoToFloor",
+  "ElementResolver": {
+    "ResolutionMap": {}
+  },
+  "Inputs": [],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Function, DynamoCore",
+      "FunctionSignature": "8a38e656-94da-418d-abe4-4d3e6e117b0a",
+      "FunctionType": "Graph",
+      "NodeType": "FunctionNode",
+      "Id": "9c9cbac2172649c8bd51ae83463e7daa",
+      "Inputs": [
+        {
+          "Id": "aff67965d9144868ba6f5e52c2f14100",
+          "Name": "points",
+          "Description": "var[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "78b69ef6ecf7412882ada8d064d6bbcc",
+          "Name": "floorElement",
+          "Description": "var[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "2e871f5a6932409d93da8103929f74f1",
+          "Name": "item",
+          "Description": "return value",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": ""
+    },
+    {
+      "ConcreteType": "Dynamo.Nodes.DSModelElementSelection, DSRevitNodesUI",
+      "NodeType": "ExtensionNode",
+      "InstanceId": [
+        "ac86a796-ec50-4e18-9d20-42cec9c29371-000f5e90"
+      ],
+      "Id": "f8116205e9ec4d31b836ac4379612367",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "7d389cf8a195498d8bb8e3d002dadaee",
+          "Name": "Element",
+          "Description": "The selected elements.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled"
+    },
+    {
+      "ConcreteType": "Dynamo.Nodes.DSModelElementSelection, DSRevitNodesUI",
+      "NodeType": "ExtensionNode",
+      "InstanceId": [
+        "ac86a796-ec50-4e18-9d20-42cec9c29371-000f60fd"
+      ],
+      "Id": "f784ce8119a645bca64bd19d31d9aa45",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "1276cccd6cca4c87ad9bc442e6487b2e",
+          "Name": "Element",
+          "Description": "The selected elements.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Revit.Elements.Topography.Points",
+      "Id": "17eaa62369924ae0b1700c5323bb5185",
+      "Inputs": [
+        {
+          "Id": "c6ceb69673d849329db08e0a13b52f4f",
+          "Name": "topography",
+          "Description": "Revit.Elements.Topography",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "0deead2fac434d058383d4ed938ae4d9",
+          "Name": "Point[]",
+          "Description": "Point[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "The set of points from which this TopographySurface is constructed.\n\nTopography.Points: Point[]"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
+      "NodeType": "ExtensionNode",
+      "Id": "491b97216a0648cd942f17962737f6a1",
+      "Inputs": [
+        {
+          "Id": "c6392f68c0774437be73a5ee3041b307",
+          "Name": "",
+          "Description": "Node to evaluate.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "297661e0a83d42e99d8a9c526a4059d1",
+          "Name": "",
+          "Description": "Watch contents.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Visualize the output of node."
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "2e871f5a6932409d93da8103929f74f1",
+      "End": "c6392f68c0774437be73a5ee3041b307",
+      "Id": "e81cbd913afa47f1991f1d1813b34dac"
+    },
+    {
+      "Start": "7d389cf8a195498d8bb8e3d002dadaee",
+      "End": "78b69ef6ecf7412882ada8d064d6bbcc",
+      "Id": "d0b41b069eaf41988416bd5fbeec10b5"
+    },
+    {
+      "Start": "1276cccd6cca4c87ad9bc442e6487b2e",
+      "End": "c6ceb69673d849329db08e0a13b52f4f",
+      "Id": "e7087115352c4e589edb81acd1179562"
+    },
+    {
+      "Start": "0deead2fac434d058383d4ed938ae4d9",
+      "End": "aff67965d9144868ba6f5e52c2f14100",
+      "Id": "17b0f055f378401ab84b372fbdd4e223"
+    }
+  ],
+  "Dependencies": [
+    "8a38e656-94da-418d-abe4-4d3e6e117b0a"
+  ],
+  "NodeLibraryDependencies": [
+    {
+      "Name": "Bakery",
+      "Version": "2018.4.301",
+      "ReferenceType": "Package",
+      "Nodes": [
+        "9c9cbac2172649c8bd51ae83463e7daa"
+      ]
+    }
+  ],
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": true,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.3.0.5885",
+      "RunType": "Manual",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "Background Preview",
+      "EyeX": -17.0,
+      "EyeY": 24.0,
+      "EyeZ": 50.0,
+      "LookX": 12.0,
+      "LookY": -13.0,
+      "LookZ": -58.0,
+      "UpX": 0.0,
+      "UpY": 1.0,
+      "UpZ": 0.0
+    },
+    "NodeViews": [
+      {
+        "ShowGeometry": true,
+        "Name": "Shape Edit Floor With Points",
+        "Id": "9c9cbac2172649c8bd51ae83463e7daa",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 424.16740312835407,
+        "Y": 136.26607749731676
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Select Model Element",
+        "Id": "f8116205e9ec4d31b836ac4379612367",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 129.0,
+        "Y": 365.0
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Select Model Element",
+        "Id": "f784ce8119a645bca64bd19d31d9aa45",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 19.346393729897272,
+        "Y": -21.995022188380858
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Topography.Points",
+        "Id": "17eaa62369924ae0b1700c5323bb5185",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 269.87291690788413,
+        "Y": -53.747589106805037
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Watch",
+        "Id": "491b97216a0648cd942f17962737f6a1",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 816.07383406302051,
+        "Y": 199.73791940718081
+      }
+    ],
+    "Annotations": [],
+    "X": -9.8609151912248763,
+    "Y": 134.62174036250696,
+    "Zoom": 0.66275978056840557
+  }
+}

@@ -1,0 +1,225 @@
+{
+  "Uuid": "7f39fe9a-4071-4690-9389-068d17a936d1",
+  "IsCustomNode": false,
+  "Description": null,
+  "Name": "PaintSurf",
+  "ElementResolver": {
+    "ResolutionMap": {}
+  },
+  "Inputs": [],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "Dynamo.Nodes.DSModelElementSelection, DSRevitNodesUI",
+      "NodeType": "ExtensionNode",
+      "InstanceId": [
+        "6f60868a-9208-4363-9049-9b2885c1974c-0012be14"
+      ],
+      "Id": "8d4260b12336483b9794c669b378713d",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "34ef4a9e2f014970abf01e1e59e152ca",
+          "Name": "Element",
+          "Description": "The selected elements.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Revit.Elements.Material.ByName@string",
+      "Id": "2f1e5e0db11a422192f817bfa8fc39fe",
+      "Inputs": [
+        {
+          "Id": "68eab7d8edde49379de2e03959555b90",
+          "Name": "name",
+          "Description": "The name of the material\n\nstring",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "254b7822febd4f04a2b75015afba67fb",
+          "Name": "Material",
+          "Description": "Material",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Select a material from the current document by the name\n\nMaterial.ByName (name: string): Material"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.StringInput, CoreNodeModels",
+      "NodeType": "StringInputNode",
+      "InputValue": "POINT2_MATERIAL_FACADE_WHITE_ARGOS",
+      "Id": "800c9befce4842519dafcfe4e2f8c4c6",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "48171f9a59ef43758d83ad705e171bbc",
+          "Name": "",
+          "Description": "String",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Creates a string."
+    },
+    {
+      "ConcreteType": "PythonNodeModels.PythonNode, PythonNodeModels",
+      "NodeType": "PythonScriptNode",
+      "Code": "import clr\r\n\r\n\r\nclr.AddReference(\"RevitAPI\")\r\n\r\nfrom Autodesk.Revit.DB import *\r\nimport math, sys\r\nfrom System.Collections.Generic import *\r\n\r\nclr.AddReference('ProtoGeometry')\r\nfrom Autodesk.DesignScript.Geometry import *\r\n\r\n\r\nclr.AddReference(\"RevitNodes\")\r\nimport Revit\r\nclr.ImportExtensions(Revit.Elements)\r\nclr.ImportExtensions(Revit.GeometryConversion)\r\nclr.ImportExtensions(Revit.GeometryReferences)\r\n\r\n\r\nclr.AddReference(\"DSCoreNodes\")\r\nimport DSCore\r\nfrom DSCore import *\r\n\r\nclr.AddReference(\"RevitServices\")\r\nimport RevitServices\r\nfrom RevitServices.Persistence import DocumentManager\r\nfrom RevitServices.Transactions import TransactionManager\r\n\r\n\r\ndoc = DocumentManager.Instance.CurrentDBDocument\r\nuidoc = DocumentManager.Instance.CurrentUIApplication.ActiveUIDocument\r\nuiapp= DocumentManager.Instance.CurrentUIApplication\r\napp = uiapp.Application\r\nview = doc.ActiveView\r\n\r\n\r\nsurfaces = (IN[0])\r\nmaterial = UnwrapElement(IN[1])\r\nel = UnwrapElement(IN[2])\r\n\r\nopt=Options()\r\n\r\ngeometryElement = el.get_Geometry(opt)\r\nfaceList=[]\r\n\r\nfor geoObj in geometryElement:\r\n\tsolid = geoObj\r\n\tfor face in solid.Faces:\r\n\t\tfaceList.append(face)\r\n\r\nOUT = [faceList]\r\n\r\n\r\n\r\n\r\n\r\nTransactionManager.Instance.EnsureInTransaction(doc)\r\n\r\nfor x in faceList:\r\n\tdoc.Paint(el.Id, x, material.Id)\r\n\t\r\n\r\nTransactionManager.Instance.TransactionTaskDone() \r\n\r\n",
+      "VariableInputPorts": true,
+      "Id": "310f5bc971734354b260c3071c449430",
+      "Inputs": [
+        {
+          "Id": "026ba1725d5f4dd9bbe8cbe36d9a2692",
+          "Name": "IN[0]",
+          "Description": "Input #0",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "7beda1ae046c43f3b0c43d60ee9ede78",
+          "Name": "IN[1]",
+          "Description": "Input #1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "c362fb6f89af48948693329a80fa2919",
+          "Name": "IN[2]",
+          "Description": "Input #2",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "b6cbed82eb914b95bb396c2689c4414d",
+          "Name": "OUT",
+          "Description": "Result of the python script",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Runs an embedded IronPython script."
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "34ef4a9e2f014970abf01e1e59e152ca",
+      "End": "c362fb6f89af48948693329a80fa2919",
+      "Id": "cdc965668a07413fb662ec6d7508262e"
+    },
+    {
+      "Start": "34ef4a9e2f014970abf01e1e59e152ca",
+      "End": "026ba1725d5f4dd9bbe8cbe36d9a2692",
+      "Id": "a504bde957144c4ca38154ef0272d231"
+    },
+    {
+      "Start": "254b7822febd4f04a2b75015afba67fb",
+      "End": "7beda1ae046c43f3b0c43d60ee9ede78",
+      "Id": "dbd68b313cc2490881a226aae9568c11"
+    },
+    {
+      "Start": "48171f9a59ef43758d83ad705e171bbc",
+      "End": "68eab7d8edde49379de2e03959555b90",
+      "Id": "03796a3bcfc14e08935c2f8c88238059"
+    }
+  ],
+  "Dependencies": [],
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": true,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.0.2.6826",
+      "RunType": "Manual",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "Background Preview",
+      "EyeX": 55746.317648609634,
+      "EyeY": 46089.137572393382,
+      "EyeZ": -221521.84937844271,
+      "LookX": 7738.3659451403655,
+      "LookY": -3604.1375723933816,
+      "LookZ": -719.3146840572881,
+      "UpX": 0.21551055605919078,
+      "UpY": 0.97629600711993336,
+      "UpZ": -0.020032641082330264
+    },
+    "NodeViews": [
+      {
+        "ShowGeometry": true,
+        "Name": "Select Model Element",
+        "Id": "8d4260b12336483b9794c669b378713d",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 296.0,
+        "Y": 419.0
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Material.ByName",
+        "Id": "2f1e5e0db11a422192f817bfa8fc39fe",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1332.7491458038862,
+        "Y": 754.58298510635825
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "String",
+        "Id": "800c9befce4842519dafcfe4e2f8c4c6",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 886.0,
+        "Y": 811.0
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Python Script",
+        "Id": "310f5bc971734354b260c3071c449430",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 2242.4523524584879,
+        "Y": 386.38742555494326
+      }
+    ],
+    "Annotations": [],
+    "X": -42.378490154335282,
+    "Y": -15.80383128441423,
+    "Zoom": 0.61257726302562654
+  }
+}

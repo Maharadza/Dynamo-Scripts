@@ -1,0 +1,687 @@
+{
+  "Uuid": "355d182f-c2bc-45fb-980c-4eac372837e1",
+  "IsCustomNode": false,
+  "Description": null,
+  "Name": "AccessDoorScript",
+  "ElementResolver": {
+    "ResolutionMap": {}
+  },
+  "Inputs": [],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "Dynamo.Nodes.DSModelElementSelection, DSRevitNodesUI",
+      "NodeType": "ExtensionNode",
+      "InstanceId": [
+        "089a5c49-f45b-4cd2-90f1-e37fdb969482-005b02bb"
+      ],
+      "Id": "8c3b3d370c1c46d68269b555fafc9ae4",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "670993f3d5cb4c5f9c9723e1c6c1c8fa",
+          "Name": "Element",
+          "Description": "The selected elements.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.IntegerSlider, CoreNodeModels",
+      "NodeType": "NumberInputNode",
+      "NumberType": "Integer",
+      "InputValue": 130,
+      "MaximumValue": 500,
+      "MinimumValue": 50,
+      "StepValue": 5,
+      "Id": "0ba94e8cfcab48e08ef8383c730e6f8d",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "f994594cd2c346cdbcb50c9e9df8040c",
+          "Name": "",
+          "Description": "Int32",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "A slider that produces integer values."
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.DoubleInput, CoreNodeModels",
+      "NodeType": "NumberInputNode",
+      "NumberType": "Double",
+      "InputValue": 0.0,
+      "Id": "ccee1e82d43a404ebb65e51075a3585b",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "6ccdd2f9e0ef41cba2795f298b2cd437",
+          "Name": "",
+          "Description": "Double",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Creates a number."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Revit.Elements.Element.SetParameterByName@string,var",
+      "Id": "00ef05220b604b1388c6ddbacf0e44d4",
+      "Inputs": [
+        {
+          "Id": "4de975160028470f82f5a650da616765",
+          "Name": "element",
+          "Description": "Revit.Elements.Element",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "be91d6cd40dd41998827cde1594fc05b",
+          "Name": "parameterName",
+          "Description": "The name of the parameter to set.\n\nstring",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "cd8728f30d2845f6af006fc6f54cfe72",
+          "Name": "value",
+          "Description": "The value.\n\nvar",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "2cacc23319504f56b50721dc1cb4f6cc",
+          "Name": "Element",
+          "Description": "Element",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Set one of the element's parameters.\n\nElement.SetParameterByName (parameterName: string, value: var): Element"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.StringInput, CoreNodeModels",
+      "NodeType": "StringInputNode",
+      "InputValue": "Width",
+      "Id": "18c1a0f91e214340b70370be51dd0799",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "7c532e5d0cc4499eb68e9803636f5b53",
+          "Name": "",
+          "Description": "String",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Creates a string."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Revit.Elements.Element.SetParameterByName@string,var",
+      "Id": "03d9ebf69ae946af9c8522bb5f69f6db",
+      "Inputs": [
+        {
+          "Id": "22e6571ed769467a91de8d9e8d765573",
+          "Name": "element",
+          "Description": "Revit.Elements.Element",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "4eda0670c48f4cb6a7f2736f54162a8c",
+          "Name": "parameterName",
+          "Description": "The name of the parameter to set.\n\nstring",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "554cb39b1512494c9c814ca495afab7b",
+          "Name": "value",
+          "Description": "The value.\n\nvar",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "fcbdec20488f4a26a1c24bb0caef0dd1",
+          "Name": "Element",
+          "Description": "Element",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Set one of the element's parameters.\n\nElement.SetParameterByName (parameterName: string, value: var): Element"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.StringInput, CoreNodeModels",
+      "NodeType": "StringInputNode",
+      "InputValue": "Width Side",
+      "Id": "851fce6387f84f8b868b3ebbbd415f94",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "9c9a608c063549cbaddbd722d208df06",
+          "Name": "",
+          "Description": "String",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Creates a string."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Revit.Elements.Element.SetParameterByName@string,var",
+      "Id": "62948c25fa7349e18ac2ab0eac6066e1",
+      "Inputs": [
+        {
+          "Id": "4e079b2a8b0f44589fbb0fd64d315950",
+          "Name": "element",
+          "Description": "Revit.Elements.Element",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "d8dcfc8d190c4f5ea1ec68c376036178",
+          "Name": "parameterName",
+          "Description": "The name of the parameter to set.\n\nstring",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "fdf875bbbac04f6a85c30e455f492b84",
+          "Name": "value",
+          "Description": "The value.\n\nvar",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "0348ec4aac2146f3b080aab87dd98bbc",
+          "Name": "Element",
+          "Description": "Element",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Set one of the element's parameters.\n\nElement.SetParameterByName (parameterName: string, value: var): Element"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.StringInput, CoreNodeModels",
+      "NodeType": "StringInputNode",
+      "InputValue": "Height",
+      "Id": "8cb9a7465bd948428d6295284636989d",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "3221687a7bc3400b9f0b9006c14c0c50",
+          "Name": "",
+          "Description": "String",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Creates a string."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Revit.Elements.Element.SetParameterByName@string,var",
+      "Id": "b677c07e57c24def9c0d4b8ee0d8ac0c",
+      "Inputs": [
+        {
+          "Id": "4aeb0878f7994d71a5d87250df96189f",
+          "Name": "element",
+          "Description": "Revit.Elements.Element",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "06473204ae6a434cad037ad4a6551082",
+          "Name": "parameterName",
+          "Description": "The name of the parameter to set.\n\nstring",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "802a0bdc9e33409c816231c0161cdf8e",
+          "Name": "value",
+          "Description": "The value.\n\nvar",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "d90e59722b71451faa19f63eb9c6b47e",
+          "Name": "Element",
+          "Description": "Element",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Set one of the element's parameters.\n\nElement.SetParameterByName (parameterName: string, value: var): Element"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.StringInput, CoreNodeModels",
+      "NodeType": "StringInputNode",
+      "InputValue": "Angle",
+      "Id": "24ddb044069e44d4804a1d20ac60fc8a",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "80e38861641143d498da8cac7dd5dc88",
+          "Name": "",
+          "Description": "String",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Creates a string."
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.IntegerSlider, CoreNodeModels",
+      "NodeType": "NumberInputNode",
+      "NumberType": "Integer",
+      "InputValue": 240,
+      "MaximumValue": 1000,
+      "MinimumValue": 120,
+      "StepValue": 5,
+      "Id": "a882c349304247a2aed365cb9d303899",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "59db10bcb63f456baa833b89d799582e",
+          "Name": "",
+          "Description": "Int32",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "A slider that produces integer values."
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.IntegerSlider, CoreNodeModels",
+      "NodeType": "NumberInputNode",
+      "NumberType": "Integer",
+      "InputValue": 1390,
+      "MaximumValue": 1400,
+      "MinimumValue": 400,
+      "StepValue": 5,
+      "Id": "2fd38ad3ec1a48689f185b3bf759c767",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "b53045ebabfd4984b1f698ca6ebfa1dc",
+          "Name": "",
+          "Description": "Int32",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "A slider that produces integer values."
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "670993f3d5cb4c5f9c9723e1c6c1c8fa",
+      "End": "4de975160028470f82f5a650da616765",
+      "Id": "fa5c7a4a36ca442989a90f06326025b6"
+    },
+    {
+      "Start": "670993f3d5cb4c5f9c9723e1c6c1c8fa",
+      "End": "22e6571ed769467a91de8d9e8d765573",
+      "Id": "5c75a80ebeed48ed9631409f9ce80e33"
+    },
+    {
+      "Start": "670993f3d5cb4c5f9c9723e1c6c1c8fa",
+      "End": "4e079b2a8b0f44589fbb0fd64d315950",
+      "Id": "ce1e7d22c8214550ba60d2a366f4561e"
+    },
+    {
+      "Start": "670993f3d5cb4c5f9c9723e1c6c1c8fa",
+      "End": "4aeb0878f7994d71a5d87250df96189f",
+      "Id": "d69e49f36b8e47a68121e384e6cd7874"
+    },
+    {
+      "Start": "f994594cd2c346cdbcb50c9e9df8040c",
+      "End": "554cb39b1512494c9c814ca495afab7b",
+      "Id": "2d6a554e38da49ba86de2954a5ddb737"
+    },
+    {
+      "Start": "6ccdd2f9e0ef41cba2795f298b2cd437",
+      "End": "802a0bdc9e33409c816231c0161cdf8e",
+      "Id": "7316fbec89a14b7da90ebfba193b5848"
+    },
+    {
+      "Start": "7c532e5d0cc4499eb68e9803636f5b53",
+      "End": "be91d6cd40dd41998827cde1594fc05b",
+      "Id": "a32292001637498d93f2e1ca3cdf1a23"
+    },
+    {
+      "Start": "9c9a608c063549cbaddbd722d208df06",
+      "End": "4eda0670c48f4cb6a7f2736f54162a8c",
+      "Id": "572ce80379d74e73bd41025ce87e2a39"
+    },
+    {
+      "Start": "3221687a7bc3400b9f0b9006c14c0c50",
+      "End": "d8dcfc8d190c4f5ea1ec68c376036178",
+      "Id": "1e20ac711953441abf7623dc3e0dd9f5"
+    },
+    {
+      "Start": "80e38861641143d498da8cac7dd5dc88",
+      "End": "06473204ae6a434cad037ad4a6551082",
+      "Id": "bc50f6622cf04bbfa5612e7954ff749f"
+    },
+    {
+      "Start": "59db10bcb63f456baa833b89d799582e",
+      "End": "cd8728f30d2845f6af006fc6f54cfe72",
+      "Id": "1193a4f108b94412ac73b087d1e5d651"
+    },
+    {
+      "Start": "b53045ebabfd4984b1f698ca6ebfa1dc",
+      "End": "fdf875bbbac04f6a85c30e455f492b84",
+      "Id": "46cb5d7396eb452da0cc30f9b5c07d14"
+    }
+  ],
+  "Dependencies": [],
+  "NodeLibraryDependencies": [],
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": true,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.3.0.5885",
+      "RunType": "Automatic",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "Background Preview",
+      "EyeX": -17.0,
+      "EyeY": 24.0,
+      "EyeZ": 50.0,
+      "LookX": 12.0,
+      "LookY": -13.0,
+      "LookZ": -58.0,
+      "UpX": 0.0,
+      "UpY": 1.0,
+      "UpZ": 0.0
+    },
+    "NodeViews": [
+      {
+        "ShowGeometry": true,
+        "Name": "Select Model Element",
+        "Id": "8c3b3d370c1c46d68269b555fafc9ae4",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 448.36701893632369,
+        "Y": 292.09335435914727
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Integer Slider",
+        "Id": "0ba94e8cfcab48e08ef8383c730e6f8d",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1108.66489831871,
+        "Y": 274.415662728606
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Number",
+        "Id": "ccee1e82d43a404ebb65e51075a3585b",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1120.9385266564641,
+        "Y": 527.77669292441692
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Element.SetParameterByName",
+        "Id": "00ef05220b604b1388c6ddbacf0e44d4",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 768.0,
+        "Y": 117.0
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "String",
+        "Id": "18c1a0f91e214340b70370be51dd0799",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 621.0,
+        "Y": 183.0
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Element.SetParameterByName",
+        "Id": "03d9ebf69ae946af9c8522bb5f69f6db",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 778.0,
+        "Y": 336.0
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "String",
+        "Id": "851fce6387f84f8b868b3ebbbd415f94",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 631.0,
+        "Y": 402.0
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Element.SetParameterByName",
+        "Id": "62948c25fa7349e18ac2ab0eac6066e1",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 750.0,
+        "Y": 544.0
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "String",
+        "Id": "8cb9a7465bd948428d6295284636989d",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 603.0,
+        "Y": 610.0
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Element.SetParameterByName",
+        "Id": "b677c07e57c24def9c0d4b8ee0d8ac0c",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 753.0,
+        "Y": 757.0
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "String",
+        "Id": "24ddb044069e44d4804a1d20ac60fc8a",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 606.0,
+        "Y": 823.0
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Integer Slider",
+        "Id": "a882c349304247a2aed365cb9d303899",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1105.4967602591794,
+        "Y": 147.14902807775377
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Integer Slider",
+        "Id": "2fd38ad3ec1a48689f185b3bf759c767",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1111.5254727901593,
+        "Y": 406.78067976662294
+      }
+    ],
+    "Annotations": [
+      {
+        "Id": "50d69582191b46ffa0378794640f7e2e",
+        "Title": "Width Side",
+        "Nodes": [
+          "0ba94e8cfcab48e08ef8383c730e6f8d"
+        ],
+        "Left": 1098.66489831871,
+        "Top": 221.41566272860598,
+        "Width": 319.0,
+        "Height": 121.0,
+        "FontSize": 36.0,
+        "InitialTop": 274.415662728606,
+        "InitialHeight": 192.0,
+        "TextblockHeight": 43.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "a45606bfd1af48a397d67f3ea507720f",
+        "Title": "Width",
+        "Nodes": [
+          "a882c349304247a2aed365cb9d303899"
+        ],
+        "Left": 1095.4967602591794,
+        "Top": 94.149028077753769,
+        "Width": 319.0,
+        "Height": 121.0,
+        "FontSize": 36.0,
+        "InitialTop": 147.14902807775377,
+        "InitialHeight": 192.0,
+        "TextblockHeight": 43.0,
+        "Background": "#FFFFC999"
+      },
+      {
+        "Id": "7eb6f8c0588e4ec786756efa3a42b56a",
+        "Title": "Height",
+        "Nodes": [
+          "2fd38ad3ec1a48689f185b3bf759c767"
+        ],
+        "Left": 1101.5254727901593,
+        "Top": 353.78067976662294,
+        "Width": 319.0,
+        "Height": 121.0,
+        "FontSize": 36.0,
+        "InitialTop": 406.78067976662294,
+        "InitialHeight": 98.0,
+        "TextblockHeight": 43.0,
+        "Background": "#FFBB87C6"
+      },
+      {
+        "Id": "bb4a6a1757b84bcf978bfd290066e899",
+        "Title": "Angle",
+        "Nodes": [
+          "ccee1e82d43a404ebb65e51075a3585b"
+        ],
+        "Left": 1110.9385266564641,
+        "Top": 474.77669292441692,
+        "Width": 102.34,
+        "Height": 121.0,
+        "FontSize": 36.0,
+        "InitialTop": 527.77669292441692,
+        "InitialHeight": 98.0,
+        "TextblockHeight": 43.0,
+        "Background": "#FFA4E1FF"
+      }
+    ],
+    "X": -172.47853906238265,
+    "Y": 82.012337026849025,
+    "Zoom": 0.92109168443555689
+  }
+}
