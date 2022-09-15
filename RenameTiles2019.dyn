@@ -1,0 +1,102 @@
+<Workspace Version="1.3.4.6666" X="-608.71535787299" Y="84.7334169970755" zoom="0.7999505449059" ScaleFactor="1" Name="Home" Description="" RunType="Automatic" RunPeriod="1000" HasRunWithoutCrash="True">
+  <NamespaceResolutionMap />
+  <Elements>
+    <Dynamo.Graph.Nodes.ZeroTouch.DSFunction guid="6dad6b93-79f0-4f98-9597-637c1321688e" type="Dynamo.Graph.Nodes.ZeroTouch.DSFunction" nickname="Family.ByName" x="371" y="346" isVisible="true" isUpstreamVisible="true" lacing="Shortest" isSelectedInput="False" IsFrozen="false" isPinned="false" assembly="RevitNodes.dll" function="Revit.Elements.Family.ByName@string">
+      <PortInfo index="0" default="False" />
+    </Dynamo.Graph.Nodes.ZeroTouch.DSFunction>
+    <CoreNodeModels.Input.StringInput guid="1a9543c4-e786-4c0b-822b-eca03bad1907" type="CoreNodeModels.Input.StringInput" nickname="String" x="150" y="386" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="True" IsFrozen="false" isPinned="false">
+      <System.String>POINT2_Wall_Tile_01</System.String>
+      <System.String value="POINT2_Wall_Tile_01" />
+    </CoreNodeModels.Input.StringInput>
+    <Dynamo.Graph.Nodes.ZeroTouch.DSFunction guid="43eb57c4-250e-4314-b1d2-16c88427bb7e" type="Dynamo.Graph.Nodes.ZeroTouch.DSFunction" nickname="Family.Types" x="627" y="339" isVisible="true" isUpstreamVisible="true" lacing="Shortest" isSelectedInput="False" IsFrozen="false" isPinned="true" assembly="RevitNodes.dll" function="Revit.Elements.Family.Types">
+      <PortInfo index="0" default="False" />
+    </Dynamo.Graph.Nodes.ZeroTouch.DSFunction>
+    <Dynamo.Graph.Nodes.ZeroTouch.DSFunction guid="3e0eb694-7ea0-4b41-8f9b-69e4cf7c1d52" type="Dynamo.Graph.Nodes.ZeroTouch.DSFunction" nickname="Element.GetParameterValueByName" x="1135.61981845854" y="636.135144062914" isVisible="true" isUpstreamVisible="true" lacing="Shortest" isSelectedInput="False" IsFrozen="false" isPinned="false" assembly="RevitNodes.dll" function="Revit.Elements.Element.GetParameterValueByName@string">
+      <PortInfo index="0" default="False" />
+      <PortInfo index="1" default="False" />
+    </Dynamo.Graph.Nodes.ZeroTouch.DSFunction>
+    <CoreNodeModels.Input.StringInput guid="41ba9a30-ebbc-4257-b73b-6e1fbb8d27c9" type="CoreNodeModels.Input.StringInput" nickname="String" x="962.642096144287" y="755.343505249453" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="True" IsFrozen="false" isPinned="false">
+      <System.String>Depth</System.String>
+      <System.String value="Depth" />
+    </CoreNodeModels.Input.StringInput>
+    <Dynamo.Graph.Nodes.CustomNodes.Function guid="2d515472-9638-455d-a1a3-6d6db97e6bcf" type="Dynamo.Graph.Nodes.CustomNodes.Function" nickname="Element.SetName" x="2656.45623797783" y="327.790059573805" isVisible="true" isUpstreamVisible="true" lacing="Shortest" isSelectedInput="False" IsFrozen="false" isPinned="true">
+      <PortInfo index="0" default="False" />
+      <PortInfo index="1" default="False" />
+      <ID value="2f56d88b-a263-45de-b9e5-e074dbe52635" />
+      <Name value="Element.SetName" />
+      <Description value="Gets the name of a given Revit element" />
+      <Inputs>
+        <Input value="element" />
+        <Input value="name" />
+      </Inputs>
+      <Outputs>
+        <Output value="element" />
+        <Output value="success" />
+      </Outputs>
+    </Dynamo.Graph.Nodes.CustomNodes.Function>
+    <Dynamo.Graph.Nodes.ZeroTouch.DSFunction guid="97890206-a1a8-4071-95c3-11ac47a2742a" type="Dynamo.Graph.Nodes.ZeroTouch.DSFunction" nickname="Element.GetParameterValueByName" x="1150.46508594249" y="400.454735797982" isVisible="true" isUpstreamVisible="true" lacing="Shortest" isSelectedInput="False" IsFrozen="false" isPinned="false" assembly="RevitNodes.dll" function="Revit.Elements.Element.GetParameterValueByName@string">
+      <PortInfo index="0" default="False" />
+      <PortInfo index="1" default="False" />
+    </Dynamo.Graph.Nodes.ZeroTouch.DSFunction>
+    <CoreNodeModels.Input.StringInput guid="29368b8e-57f1-480a-9533-d1ca5ff1b775" type="CoreNodeModels.Input.StringInput" nickname="String" x="956.27353532538" y="602.498045595688" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="True" IsFrozen="false" isPinned="false">
+      <System.String>Height</System.String>
+      <System.String value="Height" />
+    </CoreNodeModels.Input.StringInput>
+    <Dynamo.Graph.Nodes.ZeroTouch.DSFunction guid="edb40fbf-cc89-430e-b99b-7c22aaf33c12" type="Dynamo.Graph.Nodes.ZeroTouch.DSFunction" nickname="Element.GetParameterValueByName" x="1131.18147785746" y="116.17314877051" isVisible="true" isUpstreamVisible="true" lacing="Shortest" isSelectedInput="False" IsFrozen="false" isPinned="false" assembly="RevitNodes.dll" function="Revit.Elements.Element.GetParameterValueByName@string">
+      <PortInfo index="0" default="False" />
+      <PortInfo index="1" default="False" />
+    </Dynamo.Graph.Nodes.ZeroTouch.DSFunction>
+    <CoreNodeModels.Input.StringInput guid="2662fa7f-3359-4ed7-b506-da300b9a9a66" type="CoreNodeModels.Input.StringInput" nickname="String" x="948.631262342692" y="461.115995415955" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="True" IsFrozen="false" isPinned="false">
+      <System.String>Width</System.String>
+      <System.String value="Width" />
+    </CoreNodeModels.Input.StringInput>
+    <PythonNodeModels.PythonNode guid="eb4c77ea-1131-4cb4-a574-a4c15565ec12" type="PythonNodeModels.PythonNode" nickname="Python Script" x="2174.44296795047" y="528.629304576812" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="False" IsFrozen="false" isPinned="true" inputcount="3">
+      <PortInfo index="0" default="False" />
+      <PortInfo index="1" default="False" />
+      <PortInfo index="2" default="False" />
+      <Script>import clr
+clr.AddReference('ProtoGeometry')
+from Autodesk.DesignScript.Geometry import *
+#The inputs to this node will be stored as a list in the IN variables.
+Width = IN[0]
+Height =IN[1]
+Depth =IN[2]
+
+Nameing=[]
+
+for counter, W in enumerate(Width):
+	Nameing.append(str(int(W))+"x"+str(int(Height[counter]))+"x"+str(int(Depth[counter])))
+#Assign your output to the OUT variable.
+OUT = Nameing </Script>
+    </PythonNodeModels.PythonNode>
+    <Dynamo.Graph.Nodes.ZeroTouch.DSFunction guid="e2e3d282-c3a5-401d-b2ec-f27b52d857dc" type="Dynamo.Graph.Nodes.ZeroTouch.DSFunction" nickname="Math.Round" x="1793.70277737727" y="61.8880325747818" isVisible="true" isUpstreamVisible="true" lacing="Shortest" isSelectedInput="False" IsFrozen="false" isPinned="true" assembly="DSCoreNodes.dll" function="DSCore.Math.Round@double">
+      <PortInfo index="0" default="False" />
+    </Dynamo.Graph.Nodes.ZeroTouch.DSFunction>
+    <Dynamo.Graph.Nodes.ZeroTouch.DSFunction guid="a15e1f07-c88d-4098-bfd2-51d8bcc7f9ae" type="Dynamo.Graph.Nodes.ZeroTouch.DSFunction" nickname="Math.Round" x="1466.40371213315" y="425.553660623807" isVisible="true" isUpstreamVisible="true" lacing="Shortest" isSelectedInput="False" IsFrozen="false" isPinned="true" assembly="DSCoreNodes.dll" function="DSCore.Math.Round@double">
+      <PortInfo index="0" default="False" />
+    </Dynamo.Graph.Nodes.ZeroTouch.DSFunction>
+  </Elements>
+  <Connectors>
+    <Dynamo.Graph.Connectors.ConnectorModel start="6dad6b93-79f0-4f98-9597-637c1321688e" start_index="0" end="43eb57c4-250e-4314-b1d2-16c88427bb7e" end_index="0" portType="0" />
+    <Dynamo.Graph.Connectors.ConnectorModel start="1a9543c4-e786-4c0b-822b-eca03bad1907" start_index="0" end="6dad6b93-79f0-4f98-9597-637c1321688e" end_index="0" portType="0" />
+    <Dynamo.Graph.Connectors.ConnectorModel start="43eb57c4-250e-4314-b1d2-16c88427bb7e" start_index="0" end="edb40fbf-cc89-430e-b99b-7c22aaf33c12" end_index="0" portType="0" />
+    <Dynamo.Graph.Connectors.ConnectorModel start="43eb57c4-250e-4314-b1d2-16c88427bb7e" start_index="0" end="97890206-a1a8-4071-95c3-11ac47a2742a" end_index="0" portType="0" />
+    <Dynamo.Graph.Connectors.ConnectorModel start="43eb57c4-250e-4314-b1d2-16c88427bb7e" start_index="0" end="3e0eb694-7ea0-4b41-8f9b-69e4cf7c1d52" end_index="0" portType="0" />
+    <Dynamo.Graph.Connectors.ConnectorModel start="43eb57c4-250e-4314-b1d2-16c88427bb7e" start_index="0" end="2d515472-9638-455d-a1a3-6d6db97e6bcf" end_index="0" portType="0" />
+    <Dynamo.Graph.Connectors.ConnectorModel start="3e0eb694-7ea0-4b41-8f9b-69e4cf7c1d52" start_index="0" end="eb4c77ea-1131-4cb4-a574-a4c15565ec12" end_index="2" portType="0" />
+    <Dynamo.Graph.Connectors.ConnectorModel start="41ba9a30-ebbc-4257-b73b-6e1fbb8d27c9" start_index="0" end="3e0eb694-7ea0-4b41-8f9b-69e4cf7c1d52" end_index="1" portType="0" />
+    <Dynamo.Graph.Connectors.ConnectorModel start="97890206-a1a8-4071-95c3-11ac47a2742a" start_index="0" end="a15e1f07-c88d-4098-bfd2-51d8bcc7f9ae" end_index="0" portType="0" />
+    <Dynamo.Graph.Connectors.ConnectorModel start="29368b8e-57f1-480a-9533-d1ca5ff1b775" start_index="0" end="97890206-a1a8-4071-95c3-11ac47a2742a" end_index="1" portType="0" />
+    <Dynamo.Graph.Connectors.ConnectorModel start="edb40fbf-cc89-430e-b99b-7c22aaf33c12" start_index="0" end="e2e3d282-c3a5-401d-b2ec-f27b52d857dc" end_index="0" portType="0" />
+    <Dynamo.Graph.Connectors.ConnectorModel start="2662fa7f-3359-4ed7-b506-da300b9a9a66" start_index="0" end="edb40fbf-cc89-430e-b99b-7c22aaf33c12" end_index="1" portType="0" />
+    <Dynamo.Graph.Connectors.ConnectorModel start="eb4c77ea-1131-4cb4-a574-a4c15565ec12" start_index="0" end="2d515472-9638-455d-a1a3-6d6db97e6bcf" end_index="1" portType="0" />
+    <Dynamo.Graph.Connectors.ConnectorModel start="e2e3d282-c3a5-401d-b2ec-f27b52d857dc" start_index="0" end="eb4c77ea-1131-4cb4-a574-a4c15565ec12" end_index="0" portType="0" />
+    <Dynamo.Graph.Connectors.ConnectorModel start="a15e1f07-c88d-4098-bfd2-51d8bcc7f9ae" start_index="0" end="eb4c77ea-1131-4cb4-a574-a4c15565ec12" end_index="1" portType="0" />
+  </Connectors>
+  <Notes />
+  <Annotations />
+  <Presets />
+  <Cameras>
+    <Camera Name="Background Preview" eyeX="-17" eyeY="24" eyeZ="50" lookX="12" lookY="-13" lookZ="-58" upX="0" upY="1" upZ="0" />
+  </Cameras>
+</Workspace>

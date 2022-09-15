@@ -13,6 +13,7 @@
       "ConcreteType": "PythonNodeModels.PythonNode, PythonNodeModels",
       "NodeType": "PythonScriptNode",
       "Code": "# Enable Python support and load DesignScript library\r\nimport clr\r\nclr.AddReference('ProtoGeometry')\r\nfrom Autodesk.DesignScript.Geometry import *\r\n\r\n#import Revit API\r\nclr.AddReference('RevitAPI')\r\nfrom Autodesk.Revit.DB import *\r\n\r\n#import Manager Classes(this is for transactions)\r\n\r\nclr.AddReference('RevitServices')\r\nfrom RevitServices.Persistence import DocumentManager\r\nfrom RevitServices.Transactions import TransactionManager\r\n\r\nclr.AddReference('RevitNodes')\r\nimport Revit\r\nclr.ImportExtensions(Revit.Elements)\r\nclr.ImportExtensions(Revit.GeometryConversion)\r\n\r\n\r\n\r\n\r\ndataEnteringNode = UnwrapElement(IN[0])\r\nx = dataEnteringNode.GetType()\r\ny = dataEnteringNode.GetOriginalGeometry(Options())\r\n\r\nnlist = []\r\n\r\nfor el in y:\r\n\t\tnlist.append(el.Faces)\r\n\r\n\r\n\r\nOUT = x,  nlist\r\n\r\n\"\"\"\r\n# The inputs to this node will be stored as a list in the IN variables.\r\nfamilytype = UnwrapElement(IN[0])\r\noutput =[]\r\n\r\n# Place your code below this line\r\ndoc = DocumentManager.Instance.CurrentDBDocument\r\n\r\nTransactionManager.Instance.EnsureInTransaction(doc)\r\n\r\nfor x in range(0, 5000, 500):\r\n\tx =UnitUtils.ConvertToInternalUnits(x, DisplayUnitType.DUT_MILLIMETERS)\r\n\tfam = doc.Create.NewFamilyInstance(XYZ(x, 0, 0), familytype, Structure.StructuralType.NonStructural)\r\n\twrappedfam = fam.ToDSType(True) #wraps element so it's visible in Dynamo\r\n\toutput.append(wrappedfam)\r\n\t\r\n#End transaction\r\n\r\nTransactionManager.Instance.TransactionTaskDone()\r\n\t\r\n\r\n# Assign your output to the OUT variable.\r\nOUT = output\r\n\r\n\r\n\r\n\"\"\"\r\n# Enable Python support and load DesignScript library\r\n\r\n\r\n\r\n\r\n",
+      "Engine": "IronPython2",
       "VariableInputPorts": true,
       "Id": "963da2bb8d6d40a88fbc5b0f26c9d5dc",
       "Inputs": [
@@ -38,7 +39,7 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Runs an embedded IronPython script."
+      "Description": "Runs an embedded Python script."
     },
     {
       "ConcreteType": "Dynamo.Nodes.DSModelElementSelection, DSRevitNodesUI",
@@ -182,13 +183,13 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "You must provide a valid family template path that will be used for all input geometry objects. The project units(and not the templates) will be used to determine the size of the output geometry.\r\nThe provided category will be used only if the family template supports it. If not, the default template category will be used instead.\r\nLikewise, the family material(provided as a string) will be set only if a material with that name exists in the template. If not, the default material will be used instead (\"By Category\").\r\nFor void cuts, the material settings will be ignored.\r\nThe Subcategory name is an optional input. If you'd like to skip assigning a Subcategory to any new instance, simply use null.\r\nThe node expects a unique family name for each geometry object. The rest of the input lists will be processed as if the node lacing is set to longest."
+      "Description": ""
     },
     {
       "ConcreteType": "Dynamo.Nodes.DSModelElementSelection, DSRevitNodesUI",
       "NodeType": "ExtensionNode",
       "InstanceId": [
-        "34d727f3-c62f-4c4c-8cab-421bb8f92b54-0015ff0d"
+        "d84936db-4532-4766-98fb-c71e4949d3a8-001f43d5"
       ],
       "Id": "25dad4151f8b4208b4d3089de1e786bf",
       "Inputs": [],
@@ -237,8 +238,8 @@
     },
     {
       "ConcreteType": "CoreNodeModels.Input.Filename, CoreNodeModels",
-      "HintPath": "C:\\ProgramData\\Autodesk\\RVT 2018\\Family Templates\\English\\Metric Generic Model.rft",
-      "InputValue": "..\\..\\..\\..\\..\\ProgramData\\Autodesk\\RVT 2018\\Family Templates\\English\\Metric Generic Model.rft",
+      "HintPath": "C:\\ProgramData\\Autodesk\\RVT 2022\\Family Templates\\English\\Metric Generic Model.rft",
+      "InputValue": "C:\\ProgramData\\Autodesk\\RVT 2022\\Family Templates\\English\\Metric Generic Model.rft",
       "NodeType": "ExtensionNode",
       "Id": "77813f28ac344a789fdaefd1f2f6fda3",
       "Inputs": [],
@@ -259,12 +260,12 @@
     {
       "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
       "NodeType": "CodeBlockNode",
-      "Code": "\"POINT2_SecurityBars_01\";",
+      "Code": "\"POINT2_StairStinger_01\";",
       "Id": "46c3e4ee9c1c422e8d736c6f6492428b",
       "Inputs": [],
       "Outputs": [
         {
-          "Id": "34f2f01fe554457facd6db5cbb0bdd52",
+          "Id": "aff925cbac304594bcf5a60ad9bd510c",
           "Name": "",
           "Description": "Value of expression at line 1",
           "UsingDefaultValue": false,
@@ -278,7 +279,8 @@
     },
     {
       "ConcreteType": "DSRevitNodesUI.Categories, DSRevitNodesUI",
-      "SelectedIndex": 228,
+      "SelectedIndex": 266,
+      "SelectedString": "OST_GenericModel",
       "NodeType": "ExtensionNode",
       "Id": "ae53265344d34e5c84c51cd711807430",
       "Inputs": [],
@@ -558,6 +560,66 @@
       ],
       "Replication": "Disabled",
       "Description": "Selection between a true and false."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "DSCore.List.LastItem@var[]..[]",
+      "Id": "2898b12255154d74bf942556769c608e",
+      "Inputs": [
+        {
+          "Id": "40bdd63652434bef875729cdefc6ec99",
+          "Name": "list",
+          "Description": "List to get the last item of.\n\nvar[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "0c1aa32990c14b5b904776ea64dd3f14",
+          "Name": "last",
+          "Description": "Last item in the list.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Retrieves the last item in a list.\n\nList.LastItem (list: var[]..[]): var[]..[]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Autodesk.DesignScript.Geometry.Solid.ByUnion@Autodesk.DesignScript.Geometry.Solid[]",
+      "Id": "ec44dcecc8054b2b95a255e9af063bed",
+      "Inputs": [
+        {
+          "Id": "f562c32f94a742899baa1f68fd76dfbc",
+          "Name": "solids",
+          "Description": "A collection of solids\n\nSolid[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "14a4823ed100484183183e05f0477f02",
+          "Name": "Solid",
+          "Description": "Solid",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Union a collection of solids into one solid\n\nSolid.ByUnion (solids: Solid[]): Solid"
     }
   ],
   "Connectors": [
@@ -588,8 +650,8 @@
     },
     {
       "Start": "0733696f8db04c6ea14add904a61795d",
-      "End": "cf7fa0974c74429ba10f6f5e8990aa09",
-      "Id": "2fae10c7e2094a8c9bcf5376d08bca76"
+      "End": "40bdd63652434bef875729cdefc6ec99",
+      "Id": "30c62c8102e2416b8b9854b1d06bb1e0"
     },
     {
       "Start": "f8055d5a2f704423898e26cb0b65e20e",
@@ -597,9 +659,9 @@
       "Id": "e1354e634dc244789eb0646ba67ca51d"
     },
     {
-      "Start": "34f2f01fe554457facd6db5cbb0bdd52",
+      "Start": "aff925cbac304594bcf5a60ad9bd510c",
       "End": "78f61e3c57754912b73ebb5a427561a2",
-      "Id": "138da1d924b242a2bbfb3a6d80e66f4d"
+      "Id": "81f92f8487f5405887809d1f968b84ad"
     },
     {
       "Start": "2b02ee60c7524db9a9903e693625b2ed",
@@ -640,10 +702,25 @@
       "Start": "081895955bf24fd7819ab2578a1734e4",
       "End": "914bdc68232544cb84aa6f26f25f2bd6",
       "Id": "c0d22bb9d3e145dcafe1b5b8b2c46bea"
+    },
+    {
+      "Start": "0c1aa32990c14b5b904776ea64dd3f14",
+      "End": "cf7fa0974c74429ba10f6f5e8990aa09",
+      "Id": "5dc11c940f3047fea06d2fc107a03f38"
     }
   ],
   "Dependencies": [
     "ecdb3729-0de2-4c50-bdca-28fe881027a2"
+  ],
+  "NodeLibraryDependencies": [
+    {
+      "Name": "spring nodes",
+      "Version": "203.1.0",
+      "ReferenceType": "Package",
+      "Nodes": [
+        "feea65980b274cebaa1298781f3b2d26"
+      ]
+    }
   ],
   "Bindings": [],
   "View": {
@@ -651,21 +728,21 @@
       "ScaleFactor": 1.0,
       "HasRunWithoutCrash": true,
       "IsVisibleInDynamoLibrary": true,
-      "Version": "2.0.2.6826",
+      "Version": "2.10.1.3976",
       "RunType": "Manual",
       "RunPeriod": "1000"
     },
     "Camera": {
       "Name": "Background Preview",
-      "EyeX": -36.978025321221487,
-      "EyeY": 41.825235450585225,
-      "EyeZ": 186.93470457706368,
-      "LookX": 36.978025321221487,
-      "LookY": -41.825235450585225,
-      "LookZ": -186.93470457706368,
-      "UpX": 0.0,
-      "UpY": 1.0,
-      "UpZ": 0.0
+      "EyeX": 111502.4296875,
+      "EyeY": 27811.890625,
+      "EyeZ": -50283.0234375,
+      "LookX": -2211.7421875,
+      "LookY": -2099.8984375,
+      "LookZ": 5041.16015625,
+      "UpX": -0.059383474290370941,
+      "UpY": 0.98901593685150146,
+      "UpZ": 0.13535554707050323
     },
     "NodeViews": [
       {
@@ -700,13 +777,13 @@
       },
       {
         "ShowGeometry": true,
-        "Name": "Springs.FamilyInstance.ByGeometry",
+        "Name": "ꟿ FamilyInstance.ByGeometry",
         "Id": "feea65980b274cebaa1298781f3b2d26",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 645.4238646284457,
-        "Y": 569.604166918004
+        "X": 742.07100724125712,
+        "Y": 631.10689403524759
       },
       {
         "ShowGeometry": true,
@@ -755,8 +832,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": -26.641669115455215,
-        "Y": 716.97910354770988
+        "X": -38.741131403597024,
+        "Y": 698.15771776615611
       },
       {
         "ShowGeometry": true,
@@ -847,11 +924,31 @@
         "Excluded": false,
         "X": 1349.2649079513481,
         "Y": 368.33133046072544
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "List.LastItem",
+        "Id": "2898b12255154d74bf942556769c608e",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 508.86772338979017,
+        "Y": 519.419735797486
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Solid.ByUnion",
+        "Id": "ec44dcecc8054b2b95a255e9af063bed",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 720.07458834899478,
+        "Y": 472.89625605441006
       }
     ],
     "Annotations": [],
-    "X": 538.02717325267179,
-    "Y": 206.55565565690966,
-    "Zoom": 0.40031349878008188
+    "X": 175.28171817435032,
+    "Y": -220.76713903348832,
+    "Zoom": 1.0365879804954288
   }
 }

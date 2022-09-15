@@ -1,0 +1,688 @@
+{
+  "Uuid": "27a38743-92e1-4e72-bf65-e2a74dc1826b",
+  "IsCustomNode": false,
+  "Description": null,
+  "Name": "AdaptiveComponentsOnDetailLineEndpoints",
+  "ElementResolver": {
+    "ResolutionMap": {}
+  },
+  "Inputs": [],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "Dynamo.Nodes.DSModelElementsSelection, DSRevitNodesUI",
+      "NodeType": "ExtensionNode",
+      "InstanceId": [
+        "ae8b4e75-e47d-473a-8255-a4634e701f79-000e776d",
+        "ae8b4e75-e47d-473a-8255-a4634e701f79-000e776e",
+        "ae8b4e75-e47d-473a-8255-a4634e701f79-000e776f",
+        "ae8b4e75-e47d-473a-8255-a4634e701f79-000e7770",
+        "ae8b4e75-e47d-473a-8255-a4634e701f79-000e7771",
+        "ae8b4e75-e47d-473a-8255-a4634e701f79-000e7772",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d73d",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d73e",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d73f",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d740",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d74b",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d74c",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d74d",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d74e",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d759",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d75a",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d75b",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d75c",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d768",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d769",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d76a",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d76b",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d77b",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d77c",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d77d",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d77e",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d789",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d78a",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d78b",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d78c",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d79a",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d79b",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d79c",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d79d",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d7aa",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d7ab",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d7ac",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d7ad",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d7bd",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d7be",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d7bf",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d7c0",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d7cc",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d7cd",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d7ce",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d7cf",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d7db",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d7dc",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d7dd",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d7de",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d7ec",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d7ed",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d7ee",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d7ef",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d7ff",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d800",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d801",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d802",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d80d",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d80e",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d80f",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d810",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d81e",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d81f",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d820",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d821",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d871",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d872",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d873",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d874",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d875",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d876",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d877",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d878",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d879",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d87a",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d87b",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d87c",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d87d",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d87e",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d87f",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d880",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d881",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d882",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d883",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d884",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d885",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d886",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d887",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d888",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d889",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d88a",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d88b",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d88c",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d88d",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d88e",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d88f",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d890",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d891",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d892",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d893",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d894",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d895",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d896",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d897",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d898",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d899",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d89a",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d89b",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d89c",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d89d",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d89e",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d89f",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d8a0",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d8a1",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d8a2",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d8a3",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d8a4",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d8a5",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d8a6",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d8a7",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d8a8",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d8a9",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d8aa",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d8ab",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d8ac",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d8bc",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d8bd",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d8be",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d8bf",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d8c0",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d8c1",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d8c2",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d8c3",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d8c4",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d8c5",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d8c6",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d8c7",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d8c8",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d8c9",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d8ca",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d8cb",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d8cc",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d8cd",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d8ce",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d8cf",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d8d0",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d8d1",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d8d2",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d8d3",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d8d4",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d8d5",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d8d6",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d8d7",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d8d8",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d8d9",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d8da",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d8db",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d8dc",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d8dd",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d8de",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d8df",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d8e0",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d8e1",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d8e2",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d8e3",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d8e4",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d8e5",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d8e6",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d8e7",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d8e8",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d8e9",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d8ea",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d8eb",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d8ec",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d8ed",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d8ee",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d8ef",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d8f0",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d8f1",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d8f2",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d8f3",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d8f4",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d8f5",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d8f6",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d8f7",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d8f8",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d8f9",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d8fa",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d8fb",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d8fc",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d8fd",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d8fe",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d8ff",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d900",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d901",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d902",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d903",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d904",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d905",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d906",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d907",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d908",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d909",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d90a",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d90b",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d90c",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d90d",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d90e",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d90f",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d910",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d911",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d912",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d913",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d914",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d915",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d916",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d917",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d918",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d919",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d91a",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d91b",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d91c",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d91d",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d91e",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d91f",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d920",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d921",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d922",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d923",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d924",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d925",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d926",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d927",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d928",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d929",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d92a",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d92b",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d92c",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d92d",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d92e",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d92f",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d930",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d931",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d932",
+        "7cc0eebe-de9e-42c6-b526-6790d4d7ca76-0010d933"
+      ],
+      "Id": "7ee8789233f34a759458ab4094d44490",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "4841dc40fff647d2b2bdc891e806aa67",
+          "Name": "Elements",
+          "Description": "The selected elements.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled"
+    },
+    {
+      "ConcreteType": "PythonNodeModels.PythonNode, PythonNodeModels",
+      "NodeType": "PythonScriptNode",
+      "Code": "# Load the Python Standard and DesignScript Libraries\r\nimport sys\r\nimport clr\r\nclr.AddReference('ProtoGeometry')\r\nfrom Autodesk.DesignScript.Geometry import *\r\n\r\n# The inputs to this node will be stored as a list in the IN variables.\r\nlineList = UnwrapElement(IN[0])\r\n\r\nfullPointList=[]\r\nfor x in lineList:\r\n\tpointList=[]\r\n\tpointList.append(x.StartPoint)\r\n\tpointList.append(x.EndPoint)\r\n\t\r\n\tfullPointList.append(pointList)\r\n\r\nfinishedList=[]\r\n\r\n\r\nwhile len(fullPointList) > 0:\r\n\r\n\tfor x in fullPointList:\r\n\t\tnew4PointList=[]\r\n\t\tnew4PointList.append(x)\r\n\t\tfullPointList.remove(x)\r\n\t\t\r\n\t\t\t\t\r\n\t\tfor y in fullPointList:\r\n\t\t\r\n\t\t\tif new4PointList[0][0].ToString() == y[0].ToString() or new4PointList[0][0].ToString() == y[1].ToString() or new4PointList[0][1].ToString() == y[0].ToString() or new4PointList[0][1].ToString() == y[1].ToString():\r\n\t\t\t\tnew4PointList.append(y)\r\n\t\t\t\tfullPointList.remove(y)\r\n\t\t\t\t\r\n\t\t\t\t\r\n\t\t\t\tfor z in fullPointList:\r\n\t\t\t\t\r\n\t\t\t\t\tif new4PointList[-1][0].ToString() == z[0].ToString() or new4PointList[-1][0].ToString() == z[1].ToString() or new4PointList[-1][1].ToString() == z[0].ToString() or new4PointList[-1][1].ToString() == z[1].ToString():\r\n\t\t\t\t\t\tnew4PointList.append(z)\r\n\t\t\t\t\t\tfullPointList.remove(z)\r\n\t\t\t\t\t\t\r\n\t\t\t\t\t\t\r\n\t\t\t\t\t\tfor a in fullPointList:\r\n\t\t\t\t\t\t\r\n\t\t\t\t\t\t\tif new4PointList[-1][0].ToString() == a[0].ToString() or new4PointList[-1][0].ToString() == a[1].ToString() or new4PointList[-1][1].ToString() == a[0].ToString() or new4PointList[-1][1].ToString() == a[1].ToString():\r\n\t\t\t\t\t\t\t\tnew4PointList.append(a)\r\n\t\t\t\t\t\t\t\tfinishedList.append(new4PointList)\r\n\t\t\t\t\t\t\t\tfullPointList.remove(a)\r\n\t\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t\t\r\n\r\nOUT = finishedList",
+      "VariableInputPorts": true,
+      "Id": "a36560af75c24b06b51f6dce8764c6d8",
+      "Inputs": [
+        {
+          "Id": "5735a004556148498665133aae84ff71",
+          "Name": "IN[0]",
+          "Description": "Input #0",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "1d4d1f339f984df3952f4404fe6ce0ca",
+          "Name": "OUT",
+          "Description": "Result of the python script",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Runs an embedded IronPython script."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Revit.Elements.Element.Geometry",
+      "Id": "adb54640cb72409ead9dd002e58409bb",
+      "Inputs": [
+        {
+          "Id": "39f916b2c23c4c86887cc4a0c82d4878",
+          "Name": "element",
+          "Description": "Revit.Elements.Element",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "fbd3e9d05ab04aa89a4c559fbc2a4b2a",
+          "Name": "var[]",
+          "Description": "var[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Get all of the Geometry associated with this object\n\nElement.Geometry ( ): var[]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "DSCore.List.Flatten@var[]..[],int",
+      "Id": "9d300c8033ac4da286b1256b08346d50",
+      "Inputs": [
+        {
+          "Id": "b20ee46f10474d2b96079aa8dad80bfd",
+          "Name": "list",
+          "Description": "List to flatten.\n\nvar[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "61a033edb38442e59b5598c1f7db9825",
+          "Name": "amt",
+          "Description": "Layers of nesting to remove.\n\nint\nDefault value : -1",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "bfc59077f0b4408da6fb8b311427cfc0",
+          "Name": "var[]..[]",
+          "Description": "var[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Flattens a nested list of lists by a certain amount.\n\nList.Flatten (list: var[]..[], amt: int = -1): var[]..[]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "DSCore.List.Sort@var[]",
+      "Id": "e28c1f9f7c254d9e887e76ecfdb06571",
+      "Inputs": [
+        {
+          "Id": "ffdbff6141cc40459e047f842f0ecfd9",
+          "Name": "list",
+          "Description": "The list of items to be sorted.\n\nvar[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "4e8d1c6e8c85474e9a2fc17036f54c32",
+          "Name": "newList",
+          "Description": "The indices of the items in the sorted list.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Sorts a list by the items and return their indices.\n\nList.Sort (list: var[]): var[]..[]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Revit.Elements.AdaptiveComponent.ByPoints@Autodesk.DesignScript.Geometry.Point[][],Revit.Elements.FamilyType",
+      "Id": "5c68a1ea1c14404fb0a6f679bd06cbf0",
+      "Inputs": [
+        {
+          "Id": "5e0dc973b3c14a11b55ecf36b27e6948",
+          "Name": "points",
+          "Description": "a two-dimensional array of points\n\nPoint[][]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "2c4eb75a524c4ee29bef81699b96ee30",
+          "Name": "familyType",
+          "Description": "a family type to use to create the adaptive components\n\nFamilyType",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "05bc4093670642d5916517fe378e990b",
+          "Name": "AdaptiveComponent[]..[]",
+          "Description": "AdaptiveComponent[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Create a list of adaptive components from two-dimensional array of points\n\nAdaptiveComponent.ByPoints (points: Point[][], familyType: FamilyType): AdaptiveComponent[]..[]"
+    },
+    {
+      "ConcreteType": "DSRevitNodesUI.FamilyTypes, DSRevitNodesUI",
+      "SelectedIndex": 13,
+      "SelectedString": "Family1:Family1",
+      "NodeType": "ExtensionNode",
+      "Id": "ef5263b8a9204f23a4d543f0621bd7ad",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "b431e12af3c344af980b3a8000460671",
+          "Name": "Family Type",
+          "Description": "The selected Family Type",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "All family types available in the document."
+    },
+    {
+      "ConcreteType": "PythonNodeModels.PythonNode, PythonNodeModels",
+      "NodeType": "PythonScriptNode",
+      "Code": "# Load the Python Standard and DesignScript Libraries\r\nimport sys\r\nimport clr\r\nclr.AddReference('ProtoGeometry')\r\nfrom Autodesk.DesignScript.Geometry import *\r\n\r\n# The inputs to this node will be stored as a list in the IN variables.\r\nlineList = UnwrapElement(IN[0])\r\n\r\nfullPointList=[]\r\nfor x in lineList:\r\n\tpointList=[]\r\n\tpointList.append(x.StartPoint)\r\n\tpointList.append(x.EndPoint)\r\n\t\r\n\tfullPointList.append(pointList)\r\n\r\nfinishedList=[]\r\n\r\n\r\nwhile len(fullPointList) > 0:\r\n\r\n\tfor x in fullPointList:\r\n\t\tnew4PointList=[]\r\n\t\tnew4PointList.append(x[0])\r\n\t\tfullPointList.remove(x)\r\n\t\t\r\n\t\t\t\t\r\n\t\tfor y in fullPointList:\r\n\t\t\r\n\t\t\tif new4PointList[0].ToString() == y[0].ToString():\r\n\t\t\t\tnew4PointList.append(y[1])\r\n\t\t\t\tfullPointList.remove(y)\r\n\r\n\t\t\t\tfor z in fullPointList:\r\n\t\t\t\t\r\n\t\t\t\t\tif new4PointList[-1].ToString() == z[0].ToString():\r\n\t\t\t\t\t\tnew4PointList.append(z[1])\r\n\t\t\t\t\t\tfullPointList.remove(z)\r\n\t\t\t\t\t\t\r\n\t\t\t\t\t\t\r\n\t\t\t\t\t\tfor a in fullPointList:\r\n\t\t\t\t\t\t\r\n\t\t\t\t\t\t\tif new4PointList[-1].ToString() == a[0].ToString():\r\n\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t\tnew4PointList.append(a[1])\r\n\t\t\t\t\t\t\t\tfinishedList.append(new4PointList)\r\n\t\t\t\t\t\t\t\tfullPointList.remove(a)\r\n\t\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\telif new4PointList[-1].ToString() == a[1].ToString():\r\n\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t\tnew4PointList.append(a[0])\r\n\t\t\t\t\t\t\t\tfinishedList.append(new4PointList)\r\n\t\t\t\t\t\t\t\tfullPointList.remove(a)\r\n\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t\t\r\n\t\t\t\t\telif new4PointList[-1].ToString() == z[1].ToString():\r\n\t\t\t\t\t\r\n\t\t\t\t\t\tnew4PointList.append(z[0])\r\n\t\t\t\t\t\tfullPointList.remove(z)\r\n\t\t\t\t\t\t\r\n\t\t\t\t\t\t\r\n\t\t\t\t\t\tfor a in fullPointList:\r\n\t\t\t\t\t\t\r\n\t\t\t\t\t\t\tif new4PointList[-1].ToString() == a[0].ToString():\r\n\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t\tnew4PointList.append(a[1])\r\n\t\t\t\t\t\t\t\tfinishedList.append(new4PointList)\r\n\t\t\t\t\t\t\t\tfullPointList.remove(a)\r\n\t\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\telif new4PointList[-1].ToString() == a[1].ToString():\r\n\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t\tnew4PointList.append(a[0])\r\n\t\t\t\t\t\t\t\tfinishedList.append(new4PointList)\r\n\t\t\t\t\t\t\t\tfullPointList.remove(a)\r\n\t\t\t\t\t\t\t\t####\r\n\t\t\t\t\t\t\t\t\r\n\t\t\telif new4PointList[0].ToString() == y[1].ToString():\r\n\t\t\t\tnew4PointList.append(y[0])\r\n\t\t\t\tfullPointList.remove(y)\r\n\r\n\t\t\t\tfor z in fullPointList:\r\n\t\t\t\t\r\n\t\t\t\t\tif new4PointList[-1].ToString() == z[0].ToString():\r\n\t\t\t\t\t\tnew4PointList.append(z[1])\r\n\t\t\t\t\t\tfullPointList.remove(z)\r\n\t\t\t\t\t\t\r\n\t\t\t\t\t\t\r\n\t\t\t\t\t\tfor a in fullPointList:\r\n\t\t\t\t\t\t\r\n\t\t\t\t\t\t\tif new4PointList[-1].ToString() == a[0].ToString():\r\n\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t\tnew4PointList.append(a[1])\r\n\t\t\t\t\t\t\t\tfinishedList.append(new4PointList)\r\n\t\t\t\t\t\t\t\tfullPointList.remove(a)\r\n\t\t\t\t\t\t\telif new4PointList[-1].ToString() == a[1].ToString():\r\n\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t\tnew4PointList.append(a[0])\r\n\t\t\t\t\t\t\t\tfinishedList.append(new4PointList)\r\n\t\t\t\t\t\t\t\tfullPointList.remove(a)\r\n\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t\t\r\n\t\t\t\t\telif new4PointList[-1].ToString() == z[1].ToString():\r\n\t\t\t\t\t\r\n\t\t\t\t\t\tnew4PointList.append(z[0])\r\n\t\t\t\t\t\tfullPointList.remove(z)\r\n\t\t\t\t\t\t\r\n\t\t\t\t\t\t\r\n\t\t\t\t\t\tfor a in fullPointList:\r\n\t\t\t\t\t\t\r\n\t\t\t\t\t\t\tif new4PointList[-1].ToString() == a[0].ToString():\r\n\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t\tnew4PointList.append(a[1])\r\n\t\t\t\t\t\t\t\tfinishedList.append(new4PointList)\r\n\t\t\t\t\t\t\t\tfullPointList.remove(a)\r\n\t\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\telif new4PointList[-1].ToString() == a[1].ToString():\r\n\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t\tnew4PointList.append(a[0])\r\n\t\t\t\t\t\t\t\tfinishedList.append(new4PointList)\r\n\t\t\t\t\t\t\t\tfullPointList.remove(a)\r\n\r\n\t\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t\t\r\n\r\nOUT = finishedList",
+      "VariableInputPorts": true,
+      "Id": "4fee198d6c584d229a313401e021a2d5",
+      "Inputs": [
+        {
+          "Id": "f06c7a3a63434406a60125c91ac9507e",
+          "Name": "IN[0]",
+          "Description": "Input #0",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "3645ede7bfae41f1ad630ee8401441b9",
+          "Name": "OUT",
+          "Description": "Result of the python script",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Runs an embedded IronPython script."
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "4841dc40fff647d2b2bdc891e806aa67",
+      "End": "39f916b2c23c4c86887cc4a0c82d4878",
+      "Id": "97ac917333ab4075bb47f8cc03588cb2"
+    },
+    {
+      "Start": "fbd3e9d05ab04aa89a4c559fbc2a4b2a",
+      "End": "b20ee46f10474d2b96079aa8dad80bfd",
+      "Id": "012f1125e48a496d84ebbaa522f9f2a3"
+    },
+    {
+      "Start": "bfc59077f0b4408da6fb8b311427cfc0",
+      "End": "ffdbff6141cc40459e047f842f0ecfd9",
+      "Id": "3d5acec9c7844490b644a7a53868d190"
+    },
+    {
+      "Start": "4e8d1c6e8c85474e9a2fc17036f54c32",
+      "End": "5735a004556148498665133aae84ff71",
+      "Id": "3de4c48f35d049f5a5d6025aebd5e61a"
+    },
+    {
+      "Start": "4e8d1c6e8c85474e9a2fc17036f54c32",
+      "End": "f06c7a3a63434406a60125c91ac9507e",
+      "Id": "f097a8c47f2b435a8ad8b11a24f1cc1e"
+    },
+    {
+      "Start": "b431e12af3c344af980b3a8000460671",
+      "End": "2c4eb75a524c4ee29bef81699b96ee30",
+      "Id": "9a983a1349ce47069b120d0e39f5d42f"
+    },
+    {
+      "Start": "3645ede7bfae41f1ad630ee8401441b9",
+      "End": "5e0dc973b3c14a11b55ecf36b27e6948",
+      "Id": "80c491ce86484eaf80c74f3fbec9c44c"
+    }
+  ],
+  "Dependencies": [],
+  "NodeLibraryDependencies": [],
+  "Bindings": [
+    {
+      "NodeId": "5c68a1ea-1c14-404f-b0a6-f679bd06cbf0",
+      "Binding": {
+        "ByPoints_InClassDecl-1_InFunctionScope-1_Instance0_5c68a1ea-1c14-404f-b0a6-f679bd06cbf0": "PFNPQVAtRU5WOkVudmVsb3BlIHhtbG5zOnhzaT0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEtaW5zdGFuY2UiIHhtbG5zOnhzZD0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEiIHhtbG5zOlNPQVAtRU5DPSJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy9zb2FwL2VuY29kaW5nLyIgeG1sbnM6U09BUC1FTlY9Imh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3NvYXAvZW52ZWxvcGUvIiB4bWxuczpjbHI9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vc29hcC9lbmNvZGluZy9jbHIvMS4wIiBTT0FQLUVOVjplbmNvZGluZ1N0eWxlPSJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy9zb2FwL2VuY29kaW5nLyI+DQo8U09BUC1FTlY6Qm9keT4NCjxhMTpDYWxsU2l0ZV94MDAyQl9UcmFjZVNlcmlhbGlzZXJIZWxwZXIgaWQ9InJlZi0xIiB4bWxuczphMT0iaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS9jbHIvbnNhc3NlbS9Qcm90b0NvcmUvUHJvdG9Db3JlJTJDJTIwVmVyc2lvbiUzRDIuMy4wLjU4ODUlMkMlMjBDdWx0dXJlJTNEbmV1dHJhbCUyQyUyMFB1YmxpY0tleVRva2VuJTNEbnVsbCI+DQo8TnVtYmVyT2ZFbGVtZW50cz4xPC9OdW1iZXJPZkVsZW1lbnRzPg0KPEJhc2UtMF9IYXNEYXRhPnRydWU8L0Jhc2UtMF9IYXNEYXRhPg0KPEJhc2UtMF9EYXRhIGlkPSJyZWYtMyI+UEZOUFFWQXRSVTVXT2tWdWRtVnNiM0JsSUhodGJHNXpPbmh6YVQwaWFIUjBjRG92TDNkM2R5NTNNeTV2Y21jdk1qQXdNUzlZVFV4VFkyaGxiV0V0YVc1emRHRnVZMlVpSUhodGJHNXpPbmh6WkQwaWFIUjBjRG92TDNkM2R5NTNNeTV2Y21jdk1qQXdNUzlZVFV4VFkyaGxiV0VpSUhodGJHNXpPbE5QUVZBdFJVNURQU0pvZEhSd09pOHZjMk5vWlcxaGN5NTRiV3h6YjJGd0xtOXlaeTl6YjJGd0wyVnVZMjlrYVc1bkx5SWdlRzFzYm5NNlUwOUJVQzFGVGxZOUltaDBkSEE2THk5elkyaGxiV0Z6TG5odGJITnZZWEF1YjNKbkwzTnZZWEF2Wlc1MlpXeHZjR1V2SWlCNGJXeHVjenBqYkhJOUltaDBkSEE2THk5elkyaGxiV0Z6TG0xcFkzSnZjMjltZEM1amIyMHZjMjloY0M5bGJtTnZaR2x1Wnk5amJISXZNUzR3SWlCVFQwRlFMVVZPVmpwbGJtTnZaR2x1WjFOMGVXeGxQU0pvZEhSd09pOHZjMk5vWlcxaGN5NTRiV3h6YjJGd0xtOXlaeTl6YjJGd0wyVnVZMjlrYVc1bkx5SStEUW84VTA5QlVDMUZUbFk2UW05a2VUNE5DanhoTVRwTmRXeDBhWEJzWlZObGNtbGhiR2w2WVdKc1pVbGtJR2xrUFNKeVpXWXRNU0lnZUcxc2JuTTZZVEU5SW1oMGRIQTZMeTl6WTJobGJXRnpMbTFwWTNKdmMyOW1kQzVqYjIwdlkyeHlMMjV6WVhOelpXMHZVbVYyYVhSVFpYSjJhV05sY3k1UVpYSnphWE4wWlc1alpTOVNaWFpwZEZObGNuWnBZMlZ6SlRKREpUSXdWbVZ5YzJsdmJpVXpSREl1TXk0d0xqZ3pOVElsTWtNbE1qQkRkV3gwZFhKbEpUTkVibVYxZEhKaGJDVXlReVV5TUZCMVlteHBZMHRsZVZSdmEyVnVKVE5FYm5Wc2JDSStEUW84Ym5WdFltVnlUMlpGYkdWdFpXNTBjejQyTUR3dmJuVnRZbVZ5VDJaRmJHVnRaVzUwY3o0TkNqeHpkSEpwYm1kSlJDMHdJR2xrUFNKeVpXWXRNeUkrTjJOak1HVmxZbVV0WkdVNVpTMDBNbU0yTFdJMU1qWXROamM1TUdRMFpEZGpZVGMyTFRBd01UQmtPVE5pUEM5emRISnBibWRKUkMwd1BnMEtQR2x1ZEVsRUxUQStNVEV3TkRFNE56d3ZhVzUwU1VRdE1ENE5Danh6ZEhKcGJtZEpSQzB4SUdsa1BTSnlaV1l0TkNJK04yTmpNR1ZsWW1VdFpHVTVaUzAwTW1NMkxXSTFNall0TmpjNU1HUTBaRGRqWVRjMkxUQXdNVEJrT1RReVBDOXpkSEpwYm1kSlJDMHhQZzBLUEdsdWRFbEVMVEUrTVRFd05ERTVORHd2YVc1MFNVUXRNVDROQ2p4emRISnBibWRKUkMweUlHbGtQU0p5WldZdE5TSStOMk5qTUdWbFltVXRaR1U1WlMwME1tTTJMV0kxTWpZdE5qYzVNR1EwWkRkallUYzJMVEF3TVRCa09UUTVQQzl6ZEhKcGJtZEpSQzB5UGcwS1BHbHVkRWxFTFRJK01URXdOREl3TVR3dmFXNTBTVVF0TWo0TkNqeHpkSEpwYm1kSlJDMHpJR2xrUFNKeVpXWXROaUkrTjJOak1HVmxZbVV0WkdVNVpTMDBNbU0yTFdJMU1qWXROamM1TUdRMFpEZGpZVGMyTFRBd01UQmtPVFV3UEM5emRISnBibWRKUkMwelBnMEtQR2x1ZEVsRUxUTStNVEV3TkRJd09Ed3ZhVzUwU1VRdE16NE5Danh6ZEhKcGJtZEpSQzAwSUdsa1BTSnlaV1l0TnlJK04yTmpNR1ZsWW1VdFpHVTVaUzAwTW1NMkxXSTFNall0TmpjNU1HUTBaRGRqWVRjMkxUQXdNVEJrT1RVM1BDOXpkSEpwYm1kSlJDMDBQZzBLUEdsdWRFbEVMVFErTVRFd05ESXhOVHd2YVc1MFNVUXRORDROQ2p4emRISnBibWRKUkMwMUlHbGtQU0p5WldZdE9DSStOMk5qTUdWbFltVXRaR1U1WlMwME1tTTJMV0kxTWpZdE5qYzVNR1EwWkRkallUYzJMVEF3TVRCa09UVmxQQzl6ZEhKcGJtZEpSQzAxUGcwS1BHbHVkRWxFTFRVK01URXdOREl5TWp3dmFXNTBTVVF0TlQ0TkNqeHpkSEpwYm1kSlJDMDJJR2xrUFNKeVpXWXRPU0krTjJOak1HVmxZbVV0WkdVNVpTMDBNbU0yTFdJMU1qWXROamM1TUdRMFpEZGpZVGMyTFRBd01UQmtPVFkxUEM5emRISnBibWRKUkMwMlBnMEtQR2x1ZEVsRUxUWStNVEV3TkRJeU9Ud3ZhVzUwU1VRdE5qNE5Danh6ZEhKcGJtZEpSQzAzSUdsa1BTSnlaV1l0TVRBaVBqZGpZekJsWldKbExXUmxPV1V0TkRKak5pMWlOVEkyTFRZM09UQmtOR1EzWTJFM05pMHdNREV3WkRrMll6d3ZjM1J5YVc1blNVUXROejROQ2p4cGJuUkpSQzAzUGpFeE1EUXlNelk4TDJsdWRFbEVMVGMrRFFvOGMzUnlhVzVuU1VRdE9DQnBaRDBpY21WbUxURXhJajQzWTJNd1pXVmlaUzFrWlRsbExUUXlZell0WWpVeU5pMDJOemt3WkRSa04yTmhOell0TURBeE1HUTVOek04TDNOMGNtbHVaMGxFTFRnK0RRbzhhVzUwU1VRdE9ENHhNVEEwTWpRelBDOXBiblJKUkMwNFBnMEtQSE4wY21sdVowbEVMVGtnYVdROUluSmxaaTB4TWlJK04yTmpNR1ZsWW1VdFpHVTVaUzAwTW1NMkxXSTFNall0TmpjNU1HUTBaRGRqWVRjMkxUQXdNVEJrT1RkaFBDOXpkSEpwYm1kSlJDMDVQZzBLUEdsdWRFbEVMVGsrTVRFd05ESTFNRHd2YVc1MFNVUXRPVDROQ2p4emRISnBibWRKUkMweE1DQnBaRDBpY21WbUxURXpJajQzWTJNd1pXVmlaUzFrWlRsbExUUXlZell0WWpVeU5pMDJOemt3WkRSa04yTmhOell0TURBeE1HUTVPREU4TDNOMGNtbHVaMGxFTFRFd1BnMEtQR2x1ZEVsRUxURXdQakV4TURReU5UYzhMMmx1ZEVsRUxURXdQZzBLUEhOMGNtbHVaMGxFTFRFeElHbGtQU0p5WldZdE1UUWlQamRqWXpCbFpXSmxMV1JsT1dVdE5ESmpOaTFpTlRJMkxUWTNPVEJrTkdRM1kyRTNOaTB3TURFd1pEazRPRHd2YzNSeWFXNW5TVVF0TVRFK0RRbzhhVzUwU1VRdE1URStNVEV3TkRJMk5Ed3ZhVzUwU1VRdE1URStEUW84YzNSeWFXNW5TVVF0TVRJZ2FXUTlJbkpsWmkweE5TSStOMk5qTUdWbFltVXRaR1U1WlMwME1tTTJMV0kxTWpZdE5qYzVNR1EwWkRkallUYzJMVEF3TVRCa09UaGxQQzl6ZEhKcGJtZEpSQzB4TWo0TkNqeHBiblJKUkMweE1qNHhNVEEwTWpjd1BDOXBiblJKUkMweE1qNE5Danh6ZEhKcGJtZEpSQzB4TXlCcFpEMGljbVZtTFRFMklqNDNZMk13WldWaVpTMWtaVGxsTFRReVl6WXRZalV5TmkwMk56a3daRFJrTjJOaE56WXRNREF4TUdRNU9UVThMM04wY21sdVowbEVMVEV6UGcwS1BHbHVkRWxFTFRFelBqRXhNRFF5TnpjOEwybHVkRWxFTFRFelBnMEtQSE4wY21sdVowbEVMVEUwSUdsa1BTSnlaV1l0TVRjaVBqZGpZekJsWldKbExXUmxPV1V0TkRKak5pMWlOVEkyTFRZM09UQmtOR1EzWTJFM05pMHdNREV3WkRrNVl6d3ZjM1J5YVc1blNVUXRNVFErRFFvOGFXNTBTVVF0TVRRK01URXdOREk0TkR3dmFXNTBTVVF0TVRRK0RRbzhjM1J5YVc1blNVUXRNVFVnYVdROUluSmxaaTB4T0NJK04yTmpNR1ZsWW1VdFpHVTVaUzAwTW1NMkxXSTFNall0TmpjNU1HUTBaRGRqWVRjMkxUQXdNVEJrT1dFelBDOXpkSEpwYm1kSlJDMHhOVDROQ2p4cGJuUkpSQzB4TlQ0eE1UQTBNamt4UEM5cGJuUkpSQzB4TlQ0TkNqeHpkSEpwYm1kSlJDMHhOaUJwWkQwaWNtVm1MVEU1SWo0M1kyTXdaV1ZpWlMxa1pUbGxMVFF5WXpZdFlqVXlOaTAyTnprd1pEUmtOMk5oTnpZdE1EQXhNR1E1WVdFOEwzTjBjbWx1WjBsRUxURTJQZzBLUEdsdWRFbEVMVEUyUGpFeE1EUXlPVGc4TDJsdWRFbEVMVEUyUGcwS1BITjBjbWx1WjBsRUxURTNJR2xrUFNKeVpXWXRNakFpUGpkall6QmxaV0psTFdSbE9XVXROREpqTmkxaU5USTJMVFkzT1RCa05HUTNZMkUzTmkwd01ERXdaRGxpTVR3dmMzUnlhVzVuU1VRdE1UYytEUW84YVc1MFNVUXRNVGMrTVRFd05ETXdOVHd2YVc1MFNVUXRNVGMrRFFvOGMzUnlhVzVuU1VRdE1UZ2dhV1E5SW5KbFppMHlNU0krTjJOak1HVmxZbVV0WkdVNVpTMDBNbU0yTFdJMU1qWXROamM1TUdRMFpEZGpZVGMyTFRBd01UQmtPV0k0UEM5emRISnBibWRKUkMweE9ENE5DanhwYm5SSlJDMHhPRDR4TVRBME16RXlQQzlwYm5SSlJDMHhPRDROQ2p4emRISnBibWRKUkMweE9TQnBaRDBpY21WbUxUSXlJajQzWTJNd1pXVmlaUzFrWlRsbExUUXlZell0WWpVeU5pMDJOemt3WkRSa04yTmhOell0TURBeE1HUTVZbVk4TDNOMGNtbHVaMGxFTFRFNVBnMEtQR2x1ZEVsRUxURTVQakV4TURRek1UazhMMmx1ZEVsRUxURTVQZzBLUEhOMGNtbHVaMGxFTFRJd0lHbGtQU0p5WldZdE1qTWlQamRqWXpCbFpXSmxMV1JsT1dVdE5ESmpOaTFpTlRJMkxUWTNPVEJrTkdRM1kyRTNOaTB3TURFd1pEbGpOand2YzNSeWFXNW5TVVF0TWpBK0RRbzhhVzUwU1VRdE1qQStNVEV3TkRNeU5qd3ZhVzUwU1VRdE1qQStEUW84YzNSeWFXNW5TVVF0TWpFZ2FXUTlJbkpsWmkweU5DSStOMk5qTUdWbFltVXRaR1U1WlMwME1tTTJMV0kxTWpZdE5qYzVNR1EwWkRkallUYzJMVEF3TVRCa09XTmtQQzl6ZEhKcGJtZEpSQzB5TVQ0TkNqeHBiblJKUkMweU1UNHhNVEEwTXpNelBDOXBiblJKUkMweU1UNE5Danh6ZEhKcGJtZEpSQzB5TWlCcFpEMGljbVZtTFRJMUlqNDNZMk13WldWaVpTMWtaVGxsTFRReVl6WXRZalV5TmkwMk56a3daRFJrTjJOaE56WXRNREF4TUdRNVpETThMM04wY21sdVowbEVMVEl5UGcwS1BHbHVkRWxFTFRJeVBqRXhNRFF6TXprOEwybHVkRWxFTFRJeVBnMEtQSE4wY21sdVowbEVMVEl6SUdsa1BTSnlaV1l0TWpZaVBqZGpZekJsWldKbExXUmxPV1V0TkRKak5pMWlOVEkyTFRZM09UQmtOR1EzWTJFM05pMHdNREV3WkRsa1lUd3ZjM1J5YVc1blNVUXRNak0rRFFvOGFXNTBTVVF0TWpNK01URXdORE0wTmp3dmFXNTBTVVF0TWpNK0RRbzhjM1J5YVc1blNVUXRNalFnYVdROUluSmxaaTB5TnlJK04yTmpNR1ZsWW1VdFpHVTVaUzAwTW1NMkxXSTFNall0TmpjNU1HUTBaRGRqWVRjMkxUQXdNVEJrT1dVd1BDOXpkSEpwYm1kSlJDMHlORDROQ2p4cGJuUkpSQzB5TkQ0eE1UQTBNelV5UEM5cGJuUkpSQzB5TkQ0TkNqeHpkSEpwYm1kSlJDMHlOU0JwWkQwaWNtVm1MVEk0SWo0M1kyTXdaV1ZpWlMxa1pUbGxMVFF5WXpZdFlqVXlOaTAyTnprd1pEUmtOMk5oTnpZdE1EQXhNR1E1WlRjOEwzTjBjbWx1WjBsRUxUSTFQZzBLUEdsdWRFbEVMVEkxUGpFeE1EUXpOVGs4TDJsdWRFbEVMVEkxUGcwS1BITjBjbWx1WjBsRUxUSTJJR2xrUFNKeVpXWXRNamtpUGpkall6QmxaV0psTFdSbE9XVXROREpqTmkxaU5USTJMVFkzT1RCa05HUTNZMkUzTmkwd01ERXdaRGxsWkR3dmMzUnlhVzVuU1VRdE1qWStEUW84YVc1MFNVUXRNalkrTVRFd05ETTJOVHd2YVc1MFNVUXRNalkrRFFvOGMzUnlhVzVuU1VRdE1qY2dhV1E5SW5KbFppMHpNQ0krTjJOak1HVmxZbVV0WkdVNVpTMDBNbU0yTFdJMU1qWXROamM1TUdRMFpEZGpZVGMyTFRBd01UQmtPV1l6UEM5emRISnBibWRKUkMweU56NE5DanhwYm5SSlJDMHlOejR4TVRBME16Y3hQQzlwYm5SSlJDMHlOejROQ2p4emRISnBibWRKUkMweU9DQnBaRDBpY21WbUxUTXhJajQzWTJNd1pXVmlaUzFrWlRsbExUUXlZell0WWpVeU5pMDJOemt3WkRSa04yTmhOell0TURBeE1HUTVaams4TDNOMGNtbHVaMGxFTFRJNFBnMEtQR2x1ZEVsRUxUSTRQakV4TURRek56YzhMMmx1ZEVsRUxUSTRQZzBLUEhOMGNtbHVaMGxFTFRJNUlHbGtQU0p5WldZdE16SWlQamRqWXpCbFpXSmxMV1JsT1dVdE5ESmpOaTFpTlRJMkxUWTNPVEJrTkdRM1kyRTNOaTB3TURFd1pEbG1aand2YzNSeWFXNW5TVVF0TWprK0RRbzhhVzUwU1VRdE1qaytNVEV3TkRNNE16d3ZhVzUwU1VRdE1qaytEUW84YzNSeWFXNW5TVVF0TXpBZ2FXUTlJbkpsWmkwek15SStOMk5qTUdWbFltVXRaR1U1WlMwME1tTTJMV0kxTWpZdE5qYzVNR1EwWkRkallUYzJMVEF3TVRCa1lUQTJQQzl6ZEhKcGJtZEpSQzB6TUQ0TkNqeHBiblJKUkMwek1ENHhNVEEwTXprd1BDOXBiblJKUkMwek1ENE5Danh6ZEhKcGJtZEpSQzB6TVNCcFpEMGljbVZtTFRNMElqNDNZMk13WldWaVpTMWtaVGxsTFRReVl6WXRZalV5TmkwMk56a3daRFJrTjJOaE56WXRNREF4TUdSaE1HTThMM04wY21sdVowbEVMVE14UGcwS1BHbHVkRWxFTFRNeFBqRXhNRFF6T1RZOEwybHVkRWxFTFRNeFBnMEtQSE4wY21sdVowbEVMVE15SUdsa1BTSnlaV1l0TXpVaVBqZGpZekJsWldKbExXUmxPV1V0TkRKak5pMWlOVEkyTFRZM09UQmtOR1EzWTJFM05pMHdNREV3WkdFeE1qd3ZjM1J5YVc1blNVUXRNekkrRFFvOGFXNTBTVVF0TXpJK01URXdORFF3TWp3dmFXNTBTVVF0TXpJK0RRbzhjM1J5YVc1blNVUXRNek1nYVdROUluSmxaaTB6TmlJK04yTmpNR1ZsWW1VdFpHVTVaUzAwTW1NMkxXSTFNall0TmpjNU1HUTBaRGRqWVRjMkxUQXdNVEJrWVRFNFBDOXpkSEpwYm1kSlJDMHpNejROQ2p4cGJuUkpSQzB6TXo0eE1UQTBOREE0UEM5cGJuUkpSQzB6TXo0TkNqeHpkSEpwYm1kSlJDMHpOQ0JwWkQwaWNtVm1MVE0zSWo0M1kyTXdaV1ZpWlMxa1pUbGxMVFF5WXpZdFlqVXlOaTAyTnprd1pEUmtOMk5oTnpZdE1EQXhNR1JoTVdVOEwzTjBjbWx1WjBsRUxUTTBQZzBLUEdsdWRFbEVMVE0wUGpFeE1EUTBNVFE4TDJsdWRFbEVMVE0wUGcwS1BITjBjbWx1WjBsRUxUTTFJR2xrUFNKeVpXWXRNemdpUGpkall6QmxaV0psTFdSbE9XVXROREpqTmkxaU5USTJMVFkzT1RCa05HUTNZMkUzTmkwd01ERXdaR0V5TlR3dmMzUnlhVzVuU1VRdE16VStEUW84YVc1MFNVUXRNelUrTVRFd05EUXlNVHd2YVc1MFNVUXRNelUrRFFvOGMzUnlhVzVuU1VRdE16WWdhV1E5SW5KbFppMHpPU0krTjJOak1HVmxZbVV0WkdVNVpTMDBNbU0yTFdJMU1qWXROamM1TUdRMFpEZGpZVGMyTFRBd01UQmtZVEpqUEM5emRISnBibWRKUkMwek5qNE5DanhwYm5SSlJDMHpOajR4TVRBME5ESTRQQzlwYm5SSlJDMHpOajROQ2p4emRISnBibWRKUkMwek55QnBaRDBpY21WbUxUUXdJajQzWTJNd1pXVmlaUzFrWlRsbExUUXlZell0WWpVeU5pMDJOemt3WkRSa04yTmhOell0TURBeE1HUmhNekk4TDNOMGNtbHVaMGxFTFRNM1BnMEtQR2x1ZEVsRUxUTTNQakV4TURRME16UThMMmx1ZEVsRUxUTTNQZzBLUEhOMGNtbHVaMGxFTFRNNElHbGtQU0p5WldZdE5ERWlQamRqWXpCbFpXSmxMV1JsT1dVdE5ESmpOaTFpTlRJMkxUWTNPVEJrTkdRM1kyRTNOaTB3TURFd1pHRXpPRHd2YzNSeWFXNW5TVVF0TXpnK0RRbzhhVzUwU1VRdE16ZytNVEV3TkRRME1Ed3ZhVzUwU1VRdE16ZytEUW84YzNSeWFXNW5TVVF0TXprZ2FXUTlJbkpsWmkwME1pSStOMk5qTUdWbFltVXRaR1U1WlMwME1tTTJMV0kxTWpZdE5qYzVNR1EwWkRkallUYzJMVEF3TVRCa1lUTm1QQzl6ZEhKcGJtZEpSQzB6T1Q0TkNqeHBiblJKUkMwek9UNHhNVEEwTkRRM1BDOXBiblJKUkMwek9UNE5Danh6ZEhKcGJtZEpSQzAwTUNCcFpEMGljbVZtTFRReklqNDNZMk13WldWaVpTMWtaVGxsTFRReVl6WXRZalV5TmkwMk56a3daRFJrTjJOaE56WXRNREF4TUdSaE5EVThMM04wY21sdVowbEVMVFF3UGcwS1BHbHVkRWxFTFRRd1BqRXhNRFEwTlRNOEwybHVkRWxFTFRRd1BnMEtQSE4wY21sdVowbEVMVFF4SUdsa1BTSnlaV1l0TkRRaVBqZGpZekJsWldKbExXUmxPV1V0TkRKak5pMWlOVEkyTFRZM09UQmtOR1EzWTJFM05pMHdNREV3WkdFMFl6d3ZjM1J5YVc1blNVUXROREUrRFFvOGFXNTBTVVF0TkRFK01URXdORFEyTUR3dmFXNTBTVVF0TkRFK0RRbzhjM1J5YVc1blNVUXRORElnYVdROUluSmxaaTAwTlNJK04yTmpNR1ZsWW1VdFpHVTVaUzAwTW1NMkxXSTFNall0TmpjNU1HUTBaRGRqWVRjMkxUQXdNVEJrWVRVeVBDOXpkSEpwYm1kSlJDMDBNajROQ2p4cGJuUkpSQzAwTWo0eE1UQTBORFkyUEM5cGJuUkpSQzAwTWo0TkNqeHpkSEpwYm1kSlJDMDBNeUJwWkQwaWNtVm1MVFEySWo0M1kyTXdaV1ZpWlMxa1pUbGxMVFF5WXpZdFlqVXlOaTAyTnprd1pEUmtOMk5oTnpZdE1EQXhNR1JoTlRnOEwzTjBjbWx1WjBsRUxUUXpQZzBLUEdsdWRFbEVMVFF6UGpFeE1EUTBOekk4TDJsdWRFbEVMVFF6UGcwS1BITjBjbWx1WjBsRUxUUTBJR2xrUFNKeVpXWXRORGNpUGpkall6QmxaV0psTFdSbE9XVXROREpqTmkxaU5USTJMVFkzT1RCa05HUTNZMkUzTmkwd01ERXdaR0UxWlR3dmMzUnlhVzVuU1VRdE5EUStEUW84YVc1MFNVUXRORFErTVRFd05EUTNPRHd2YVc1MFNVUXRORFErRFFvOGMzUnlhVzVuU1VRdE5EVWdhV1E5SW5KbFppMDBPQ0krTjJOak1HVmxZbVV0WkdVNVpTMDBNbU0yTFdJMU1qWXROamM1TUdRMFpEZGpZVGMyTFRBd01UQmtZVFkwUEM5emRISnBibWRKUkMwME5UNE5DanhwYm5SSlJDMDBOVDR4TVRBME5EZzBQQzlwYm5SSlJDMDBOVDROQ2p4emRISnBibWRKUkMwME5pQnBaRDBpY21WbUxUUTVJajQzWTJNd1pXVmlaUzFrWlRsbExUUXlZell0WWpVeU5pMDJOemt3WkRSa04yTmhOell0TURBeE1HUmhObUk4TDNOMGNtbHVaMGxFTFRRMlBnMEtQR2x1ZEVsRUxUUTJQakV4TURRME9URThMMmx1ZEVsRUxUUTJQZzBLUEhOMGNtbHVaMGxFTFRRM0lHbGtQU0p5WldZdE5UQWlQamRqWXpCbFpXSmxMV1JsT1dVdE5ESmpOaTFpTlRJMkxUWTNPVEJrTkdRM1kyRTNOaTB3TURFd1pHRTNNVHd2YzNSeWFXNW5TVVF0TkRjK0RRbzhhVzUwU1VRdE5EYytNVEV3TkRRNU56d3ZhVzUwU1VRdE5EYytEUW84YzNSeWFXNW5TVVF0TkRnZ2FXUTlJbkpsWmkwMU1TSStOMk5qTUdWbFltVXRaR1U1WlMwME1tTTJMV0kxTWpZdE5qYzVNR1EwWkRkallUYzJMVEF3TVRCa1lUYzNQQzl6ZEhKcGJtZEpSQzAwT0Q0TkNqeHBiblJKUkMwME9ENHhNVEEwTlRBelBDOXBiblJKUkMwME9ENE5Danh6ZEhKcGJtZEpSQzAwT1NCcFpEMGljbVZtTFRVeUlqNDNZMk13WldWaVpTMWtaVGxsTFRReVl6WXRZalV5TmkwMk56a3daRFJrTjJOaE56WXRNREF4TUdSaE4yUThMM04wY21sdVowbEVMVFE1UGcwS1BHbHVkRWxFTFRRNVBqRXhNRFExTURrOEwybHVkRWxFTFRRNVBnMEtQSE4wY21sdVowbEVMVFV3SUdsa1BTSnlaV1l0TlRNaVBqZGpZekJsWldKbExXUmxPV1V0TkRKak5pMWlOVEkyTFRZM09UQmtOR1EzWTJFM05pMHdNREV3WkdFNE16d3ZjM1J5YVc1blNVUXROVEErRFFvOGFXNTBTVVF0TlRBK01URXdORFV4TlR3dmFXNTBTVVF0TlRBK0RRbzhjM1J5YVc1blNVUXROVEVnYVdROUluSmxaaTAxTkNJK04yTmpNR1ZsWW1VdFpHVTVaUzAwTW1NMkxXSTFNall0TmpjNU1HUTBaRGRqWVRjMkxUQXdNVEJrWVRnNVBDOXpkSEpwYm1kSlJDMDFNVDROQ2p4cGJuUkpSQzAxTVQ0eE1UQTBOVEl4UEM5cGJuUkpSQzAxTVQ0TkNqeHpkSEpwYm1kSlJDMDFNaUJwWkQwaWNtVm1MVFUxSWo0M1kyTXdaV1ZpWlMxa1pUbGxMVFF5WXpZdFlqVXlOaTAyTnprd1pEUmtOMk5oTnpZdE1EQXhNR1JoT1RBOEwzTjBjbWx1WjBsRUxUVXlQZzBLUEdsdWRFbEVMVFV5UGpFeE1EUTFNamc4TDJsdWRFbEVMVFV5UGcwS1BITjBjbWx1WjBsRUxUVXpJR2xrUFNKeVpXWXROVFlpUGpkall6QmxaV0psTFdSbE9XVXROREpqTmkxaU5USTJMVFkzT1RCa05HUTNZMkUzTmkwd01ERXdaR0U1Tmp3dmMzUnlhVzVuU1VRdE5UTStEUW84YVc1MFNVUXROVE0rTVRFd05EVXpORHd2YVc1MFNVUXROVE0rRFFvOGMzUnlhVzVuU1VRdE5UUWdhV1E5SW5KbFppMDFOeUkrTjJOak1HVmxZbVV0WkdVNVpTMDBNbU0yTFdJMU1qWXROamM1TUdRMFpEZGpZVGMyTFRBd01UQmtZVGxrUEM5emRISnBibWRKUkMwMU5ENE5DanhwYm5SSlJDMDFORDR4TVRBME5UUXhQQzlwYm5SSlJDMDFORDROQ2p4emRISnBibWRKUkMwMU5TQnBaRDBpY21WbUxUVTRJajQzWTJNd1pXVmlaUzFrWlRsbExUUXlZell0WWpVeU5pMDJOemt3WkRSa04yTmhOell0TURBeE1HUmhZVE04TDNOMGNtbHVaMGxFTFRVMVBnMEtQR2x1ZEVsRUxUVTFQakV4TURRMU5EYzhMMmx1ZEVsRUxUVTFQZzBLUEhOMGNtbHVaMGxFTFRVMklHbGtQU0p5WldZdE5Ua2lQamRqWXpCbFpXSmxMV1JsT1dVdE5ESmpOaTFpTlRJMkxUWTNPVEJrTkdRM1kyRTNOaTB3TURFd1pHRmhPVHd2YzNSeWFXNW5TVVF0TlRZK0RRbzhhVzUwU1VRdE5UWStNVEV3TkRVMU16d3ZhVzUwU1VRdE5UWStEUW84YzNSeWFXNW5TVVF0TlRjZ2FXUTlJbkpsWmkwMk1DSStOMk5qTUdWbFltVXRaR1U1WlMwME1tTTJMV0kxTWpZdE5qYzVNR1EwWkRkallUYzJMVEF3TVRCa1lXRm1QQzl6ZEhKcGJtZEpSQzAxTno0TkNqeHBiblJKUkMwMU56NHhNVEEwTlRVNVBDOXBiblJKUkMwMU56NE5Danh6ZEhKcGJtZEpSQzAxT0NCcFpEMGljbVZtTFRZeElqNDNZMk13WldWaVpTMWtaVGxsTFRReVl6WXRZalV5TmkwMk56a3daRFJrTjJOaE56WXRNREF4TUdSaFlqVThMM04wY21sdVowbEVMVFU0UGcwS1BHbHVkRWxFTFRVNFBqRXhNRFExTmpVOEwybHVkRWxFTFRVNFBnMEtQSE4wY21sdVowbEVMVFU1SUdsa1BTSnlaV1l0TmpJaVBqZGpZekJsWldKbExXUmxPV1V0TkRKak5pMWlOVEkyTFRZM09UQmtOR1EzWTJFM05pMHdNREV3WkdGaVlqd3ZjM1J5YVc1blNVUXROVGsrRFFvOGFXNTBTVVF0TlRrK01URXdORFUzTVR3dmFXNTBTVVF0TlRrK0RRbzhMMkV4T2sxMWJIUnBjR3hsVTJWeWFXRnNhWHBoWW14bFNXUStEUW84TDFOUFFWQXRSVTVXT2tKdlpIaytEUW84TDFOUFFWQXRSVTVXT2tWdWRtVnNiM0JsUGcwSzwvQmFzZS0wX0RhdGE+DQo8QmFzZS0wX0hhc05lc3RlZERhdGE+ZmFsc2U8L0Jhc2UtMF9IYXNOZXN0ZWREYXRhPg0KPC9hMTpDYWxsU2l0ZV94MDAyQl9UcmFjZVNlcmlhbGlzZXJIZWxwZXI+DQo8L1NPQVAtRU5WOkJvZHk+DQo8L1NPQVAtRU5WOkVudmVsb3BlPg0K"
+      }
+    }
+  ],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": true,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.3.0.5885",
+      "RunType": "Automatic",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "Background Preview",
+      "EyeX": -17.0,
+      "EyeY": 24.0,
+      "EyeZ": 50.0,
+      "LookX": 12.0,
+      "LookY": -13.0,
+      "LookZ": -58.0,
+      "UpX": 0.0,
+      "UpY": 1.0,
+      "UpZ": 0.0
+    },
+    "NodeViews": [
+      {
+        "ShowGeometry": true,
+        "Name": "Select Model Elements",
+        "Id": "7ee8789233f34a759458ab4094d44490",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1727.3548624736982,
+        "Y": 47.048779721658832
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Python Script",
+        "Id": "a36560af75c24b06b51f6dce8764c6d8",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": true,
+        "X": 3272.3548624736982,
+        "Y": 9.54877972165886
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Element.Geometry",
+        "Id": "adb54640cb72409ead9dd002e58409bb",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 2096.3548624736982,
+        "Y": 47.04877972165886
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "List.Flatten",
+        "Id": "9d300c8033ac4da286b1256b08346d50",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 2393.3548624736982,
+        "Y": 47.04877972165886
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "List.Sort",
+        "Id": "e28c1f9f7c254d9e887e76ecfdb06571",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 2679.3548624736982,
+        "Y": 47.04877972165886
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "AdaptiveComponent.ByPoints",
+        "Id": "5c68a1ea1c14404fb0a6f679bd06cbf0",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 3262.3548624736982,
+        "Y": 133.54877972165886
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Family Types",
+        "Id": "ef5263b8a9204f23a4d543f0621bd7ad",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 2961.3548624736982,
+        "Y": 208.54877972165886
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Python Script",
+        "Id": "4fee198d6c584d229a313401e021a2d5",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 2971.3548624736982,
+        "Y": 84.54877972165886
+      }
+    ],
+    "Annotations": [
+      {
+        "Id": "794595b8b4104cafb9d0b83374bb2b55",
+        "Title": "New",
+        "Nodes": [
+          "4fee198d6c584d229a313401e021a2d5"
+        ],
+        "Left": 2961.3548624736982,
+        "Top": 31.54877972165886,
+        "Width": 144.0,
+        "Height": 146.0,
+        "FontSize": 36.0,
+        "InitialTop": 84.54877972165886,
+        "InitialHeight": 123.0,
+        "TextblockHeight": 43.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "3b82de9506064cbb8ecc89538832d9be",
+        "Title": "Old version",
+        "Nodes": [
+          "a36560af75c24b06b51f6dce8764c6d8"
+        ],
+        "Left": 3262.3548624736982,
+        "Top": -86.45122027834114,
+        "Width": 144.0,
+        "Height": 189.0,
+        "FontSize": 36.0,
+        "InitialTop": 9.54877972165886,
+        "InitialHeight": 123.0,
+        "TextblockHeight": 86.0,
+        "Background": "#FFFF7BAC"
+      }
+    ],
+    "X": -1105.3539426199129,
+    "Y": 223.60525629511562,
+    "Zoom": 0.71902200481235656
+  }
+}

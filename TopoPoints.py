@@ -1,11 +1,13 @@
 # Load the Python Standard and DesignScript Libraries
 import numpy as np
 from tqdm import tqdm
-filename= 'DEBENHAMS-ROAD-POINTS-LOCAL-M-v2.txt'
-gridSize = 1
-rangeFix = 0.05
+filename= 'BFloor.txt'
+gridSize = 0.5
+rangeFix = 0.03
 data=[]
-data=np.loadtxt(filename, delimiter=',')
+data=np.loadtxt(filename, delimiter=',')#pay attention to delimiter
+data = data[:,:3]
+
 maxvalues=np.max(data, axis=0)
 minvalues=np.min(data, axis=0)
 range1=minvalues.copy()

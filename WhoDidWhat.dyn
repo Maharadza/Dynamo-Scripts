@@ -58,45 +58,6 @@
       "Description": "Returns worksharing information about element.\n\nElements.GetWorksharingTooltipInfo (element: Element): var[]..[]"
     },
     {
-      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Function, DynamoCore",
-      "FunctionSignature": "aef4b5ca-daca-4f1f-9486-e7a41c6d6c3a",
-      "FunctionType": "Graph",
-      "NodeType": "FunctionNode",
-      "Id": "0c3a6a8025a24d6d88b789a7993fa827",
-      "Inputs": [],
-      "Outputs": [
-        {
-          "Id": "6056a5f7bc224364a0969b9f0118f2ae",
-          "Name": "elements",
-          "Description": "return value",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        },
-        {
-          "Id": "76f7fa256e684fdda55ed1f9924f705b",
-          "Name": "listed",
-          "Description": "return value",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        },
-        {
-          "Id": "d5daca3ba1b44d15bc2efef28e4ab07f",
-          "Name": "categoryName",
-          "Description": "return value",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        }
-      ],
-      "Replication": "Auto",
-      "Description": ""
-    },
-    {
       "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
       "NodeType": "ExtensionNode",
       "Id": "3e6bc3f74fe84cc1ad693fb8eb35126d",
@@ -400,7 +361,7 @@
       "Inputs": [
         {
           "Id": "1b0f47e79c4d49d389d77afa380b7c26",
-          "Name": "Element",
+          "Name": "_element",
           "Description": "var[]..[]",
           "UsingDefaultValue": false,
           "Level": 2,
@@ -409,7 +370,7 @@
         },
         {
           "Id": "0e1537c8ec034c0b9ec2128b2e5d4cf6",
-          "Name": "View",
+          "Name": "_view",
           "Description": "var[]..[]",
           "UsingDefaultValue": false,
           "Level": 2,
@@ -420,7 +381,7 @@
       "Outputs": [
         {
           "Id": "2b9cc0dc838a490ba83cf45980246ac1",
-          "Name": "Element",
+          "Name": "_element",
           "Description": "return value",
           "UsingDefaultValue": false,
           "Level": 2,
@@ -434,6 +395,7 @@
     {
       "ConcreteType": "DSRevitNodesUI.Views, DSRevitNodesUI",
       "SelectedIndex": 4,
+      "SelectedString": "Architectural Elevation",
       "NodeType": "ExtensionNode",
       "Id": "4cdfc6302371476e91c249c02d0439f3",
       "Inputs": [],
@@ -596,6 +558,25 @@
       ],
       "Replication": "Auto",
       "Description": "Checks whether an Element is visible in given View.\n\nElements.IsVisible (element: Element, view: View): bool"
+    },
+    {
+      "ConcreteType": "DSRevitNodesUI.ElementsInView, DSRevitNodesUI",
+      "NodeType": "ExtensionNode",
+      "Id": "8f739a3cfeaf48c1b5f5f5074367a91a",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "740d19b05540411d8fb8a05ec267e9b7",
+          "Name": "elements",
+          "Description": "All visible elements in the active view.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Get all the elements which are visible in the active view."
     }
   ],
   "Connectors": [
@@ -603,16 +584,6 @@
       "Start": "01b45211cd474a36bd0d54a32e5f2412",
       "End": "20f867488fe1425db0a23d4e48a99d0e",
       "Id": "ce9b5fc73c8a4b2db5a8bdc57c0d6bd6"
-    },
-    {
-      "Start": "6056a5f7bc224364a0969b9f0118f2ae",
-      "End": "319d38d119e34076a8b94f58d4ca12f4",
-      "Id": "a87ca9849c294df898b97b74d8089b5f"
-    },
-    {
-      "Start": "6056a5f7bc224364a0969b9f0118f2ae",
-      "End": "c6b09c6cea1f49a782021e2a8313ac43",
-      "Id": "ad042bc673a34c5e9aebe3fa521b67ec"
     },
     {
       "Start": "2fc0b3e272b14cc6b51b81d705f13551",
@@ -703,11 +674,33 @@
       "Start": "4eb0a7de09c94ee98095bc26c58abd13",
       "End": "cf9f25929baf4018b6b8bcbad2691381",
       "Id": "e2571bdf9a4248728d6d245a6d27e9fe"
+    },
+    {
+      "Start": "740d19b05540411d8fb8a05ec267e9b7",
+      "End": "319d38d119e34076a8b94f58d4ca12f4",
+      "Id": "9bbbac2c38344548a9cfa7daad1eb55b"
+    },
+    {
+      "Start": "740d19b05540411d8fb8a05ec267e9b7",
+      "End": "c6b09c6cea1f49a782021e2a8313ac43",
+      "Id": "aedf12f15c8d4a8a849667619f8ee8c9"
     }
   ],
   "Dependencies": [
-    "aef4b5ca-daca-4f1f-9486-e7a41c6d6c3a",
     "dfc2063c-a98c-4afa-8872-83cf333a7439"
+  ],
+  "NodeLibraryDependencies": [
+    {
+      "Name": "archi-lab.net",
+      "Version": "2020.22.9",
+      "ReferenceType": "Package",
+      "Nodes": [
+        "faf959be4f594108bdf9549e2936f274",
+        "48eded697acd4940a63b250d7456d2a6",
+        "5a9339fc63f44e22a0f5b51848466094",
+        "71df08aaf819458f9ba41a41c5b6106f"
+      ]
+    }
   ],
   "Bindings": [],
   "View": {
@@ -715,7 +708,7 @@
       "ScaleFactor": 1.0,
       "HasRunWithoutCrash": true,
       "IsVisibleInDynamoLibrary": true,
-      "Version": "2.0.2.6826",
+      "Version": "2.3.1.11775",
       "RunType": "Manual",
       "RunPeriod": "1000"
     },
@@ -741,16 +734,6 @@
         "Excluded": false,
         "X": 550.5,
         "Y": 158.0
-      },
-      {
-        "ShowGeometry": true,
-        "Name": "Collect All Elements in Model",
-        "Id": "0c3a6a8025a24d6d88b789a7993fa827",
-        "IsSetAsInput": false,
-        "IsSetAsOutput": false,
-        "Excluded": false,
-        "X": -51.788236102801761,
-        "Y": 240.72616618917209
       },
       {
         "ShowGeometry": true,
@@ -901,11 +884,21 @@
         "Excluded": false,
         "X": 2286.5116963135483,
         "Y": 451.34151738337687
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "All Elements In Active View",
+        "Id": "8f739a3cfeaf48c1b5f5f5074367a91a",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": -2.5739514710865024,
+        "Y": 109.84274597531311
       }
     ],
     "Annotations": [],
-    "X": -2681.0678935540527,
-    "Y": 118.16416518347222,
-    "Zoom": 1.4290500111756088
+    "X": 542.16617277192222,
+    "Y": 392.0280364209969,
+    "Zoom": 0.4471555217041322
   }
 }
